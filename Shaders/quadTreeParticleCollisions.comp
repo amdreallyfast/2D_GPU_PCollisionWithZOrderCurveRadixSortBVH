@@ -2,12 +2,12 @@
 
 layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Contains all info necessary for a single node of the quad tree.  It is a dumb container 
     meant for use only by ParticleQuadTree.
 Creator:    John Cox (12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 const uint MAX_PARTICLES_PER_NODE = 100;
 struct ParticleQuadTreeNode
 {
@@ -38,11 +38,11 @@ struct ParticleQuadTreeNode
     uint _neighborIndexBottomLeft;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Stores info about a single particle.  Must match the version on the CPU side.
-Creator: John Cox (9-25-2016)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (9-25-2016)
+------------------------------------------------------------------------------------------------*/
 struct Particle
 {
     vec4 _pos;
@@ -55,26 +55,26 @@ struct Particle
     int _isActive;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that contains all the ParticleQuadTreeNodes that this simulation is running.  
     Rather self-explanatory.
-Creator: John Cox (1-10-2017)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (1-10-2017)
+------------------------------------------------------------------------------------------------*/
 layout (std430) buffer QuadTreeNodeBuffer
 {
     ParticleQuadTreeNode AllNodes[];
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that contains all the particles that this simulartion is running.  Rather 
     self-explanatory.
     
     Binding points are relevant only to a particular shader (that is, not to the OpenGL context 
     as a whole) and are set in the SSBO's ConfigureCompute(...) function.
-Creator: John Cox (9-25-2016)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (9-25-2016)
+------------------------------------------------------------------------------------------------*/
 uniform uint uMaxParticles;
 layout (std430) buffer ParticleBuffer
 {
@@ -82,7 +82,7 @@ layout (std430) buffer ParticleBuffer
 };
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     If the distance between the two particles is close enough, then an elastic collision is 
     calculated.  Only the first particle's values are changed.  The second particle is being 
@@ -106,7 +106,7 @@ Parameters:
     p2Index     Index into AllParticles array for particle to check against.
 Returns:    None
 Creator:    John Cox (1-25-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 uniform float uInverseDeltaTimeSec;
 void ParticleCollisionP1WithP2(uint p1Index, uint p2Index)
 {
@@ -157,7 +157,7 @@ void ParticleCollisionP1WithP2(uint p1Index, uint p2Index)
     AllParticles[p1Index]._netForceThisFrame += p1Force;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Governs the particle-particle collisions within this node and for each particle with the 
     node's neighbor, if necessary.
@@ -166,7 +166,7 @@ Parameters:
     nodeIndex       The quad tree node whose particles will be checked for collision.
 Returns:    None
 Creator:    John Cox (1-3-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ParticleCollisionsWithinNode(uint particleIndex, uint nodeIndex)
 {
     // MUST perform this condition check or else the "node._numCurrentParticles - 1" later could 
@@ -215,14 +215,14 @@ void ParticleCollisionsWithNeighboringNode()
 }
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The compute shader's startup function.  It governs which nodes the particle will check 
     against for collisions.
 Parameters: None
 Returns:    None
-Creator: John Cox (1-21-2017) (adapted from CPU version, 12-17-2016)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (1-21-2017) (adapted from CPU version, 12-17-2016)
+------------------------------------------------------------------------------------------------*/
 void main()
 {
     uint particleIndex = gl_GlobalInvocationID.x;

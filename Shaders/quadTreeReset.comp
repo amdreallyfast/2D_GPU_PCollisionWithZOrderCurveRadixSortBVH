@@ -2,12 +2,12 @@
 
 layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Contains all info necessary for a single node of the quad tree.  It is a dumb container 
     meant for use only by ParticleQuadTree.
 Creator:    John Cox (12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 const uint MAX_PARTICLES_PER_NODE = 100;
 struct ParticleQuadTreeNode
 {
@@ -38,12 +38,12 @@ struct ParticleQuadTreeNode
     uint _neighborIndexBottomLeft;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that contains all the ParticleQuadTreeNodes that this simulation is running.  
     Rather self-explanatory.
-Creator: John Cox (1-10-2017)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (1-10-2017)
+------------------------------------------------------------------------------------------------*/
 uniform uint uMaxNodes;
 uniform uint uNumStartingNodes;
 layout (std430) buffer QuadTreeNodeBuffer
@@ -51,13 +51,13 @@ layout (std430) buffer QuadTreeNodeBuffer
     ParticleQuadTreeNode AllQuadTreeNodes[];
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The compute shader's startup function.
 Parameters: None
 Returns:    None
-Creator: John Cox (1-10-2017)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (1-10-2017)
+------------------------------------------------------------------------------------------------*/
 void main()
 {
     uint index = gl_GlobalInvocationID.x;

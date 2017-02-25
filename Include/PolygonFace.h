@@ -17,7 +17,7 @@ struct PolygonFace
         for alteration in a compute shader.
     Parameters: None
     Returns:    None
-    Creator: John Cox, 1-16-2017
+    Creator:    John Cox, 1-16-2017
     -------------------------------------------------------------------------------------------*/
     PolygonFace() :
         _start(glm::vec2(), glm::vec2()),
@@ -33,7 +33,7 @@ struct PolygonFace
     Parameters: 
         start   Self-eplanatory.
     Returns:    None
-    Creator: John Cox, 9-25-2016
+    Creator:    John Cox, 9-25-2016
     -------------------------------------------------------------------------------------------*/
     PolygonFace(const MyVertex &start, const MyVertex &end) :
         _start(start),

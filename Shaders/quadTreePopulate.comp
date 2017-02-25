@@ -4,12 +4,12 @@ layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
 layout (binding = 3, offset = 0) uniform atomic_uint acParticleCounterPerNode[16384];
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Contains all info necessary for a single node of the quad tree.  It is a dumb container 
     meant for use only by ParticleQuadTree.
 Creator:    John Cox (12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 const uint MAX_PARTICLES_PER_NODE = 100;
 struct ParticleQuadTreeNode
 {
@@ -40,11 +40,11 @@ struct ParticleQuadTreeNode
     uint _neighborIndexBottomLeft;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Stores info about a single particle.  Must match the version on the CPU side.
 Creator: John Cox (9-25-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 struct Particle
 {
     vec4 _pos;
@@ -57,18 +57,18 @@ struct Particle
     int _isActive;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that contains all the ParticleQuadTreeNodes that this simulation is running.  
     Rather self-explanatory.
 Creator: John Cox (1-10-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 layout (std430) buffer QuadTreeNodeBuffer
 {
     ParticleQuadTreeNode AllNodes[];
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that contains all the particles that this simulartion is running.  Rather 
     self-explanatory.
@@ -76,7 +76,7 @@ Description:
     Binding points are relevant only to a particular shader (that is, not to the OpenGL context 
     as a whole) and are set in the SSBO's ConfigureCompute(...) function.
 Creator: John Cox (9-25-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 uniform uint uMaxParticles;
 layout (std430) buffer ParticleBuffer
 {
@@ -84,7 +84,7 @@ layout (std430) buffer ParticleBuffer
 };
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The compute shader's startup function.  It governs the addition of particles to the quad 
     tree.  It calculates which of the default tree nodes the particle is in, and then adds the 
@@ -93,7 +93,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator: John Cox (1-12-2017) (adapted from CPU version, 12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 uniform float uParticleRegionRadius;
 uniform vec4 uParticleRegionCenter;
 uniform uint uNumColumnsInTreeInitial;   // must be int (calculations need  it)

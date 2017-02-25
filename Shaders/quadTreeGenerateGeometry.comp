@@ -4,12 +4,12 @@ layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
 layout (binding = 4, offset = 0) uniform atomic_uint acPolygonFacesInUse;
 layout (binding = 4, offset = 4) uniform atomic_uint acPolygonFacesCrudeMutex;
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Contains all info necessary for a single node of the quad tree.  It is a dumb container 
     meant for use only by ParticleQuadTree.
 Creator:    John Cox (12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 const uint MAX_PARTICLES_PER_NODE = 100;
 struct ParticleQuadTreeNode
 {
@@ -40,12 +40,12 @@ struct ParticleQuadTreeNode
     uint _neighborIndexBottomLeft;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Stores all info necessary to draw a single vertex.  This is used for drawing the quad tree's 
     wireframe.
-Creator: John Cox (6-12-2016)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (6-12-2016)
+------------------------------------------------------------------------------------------------*/
 struct MyVertex
 {
     vec4 _pos;
@@ -54,36 +54,36 @@ struct MyVertex
     vec4 _normal;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     This is a simple structure that describes the face of a 2D polygon.  The face begins at P1 
     and ends at P2.  In this demo, the normal will be used to calculate collisions.
 Creator:    John Cox (9-8-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 struct PolygonFace
 {
     MyVertex _start;
     MyVertex _end;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that contains all the ParticleQuadTreeNodes that this simulation is running.  
     Rather self-explanatory.
-Creator: John Cox (1-10-2017)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (1-10-2017)
+------------------------------------------------------------------------------------------------*/
 uniform uint uMaxNodes;
 layout (std430) buffer QuadTreeNodeBuffer
 {
     ParticleQuadTreeNode AllNodes[];
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO that will contain all polygons necessary to draw the quad tree.  For this demo, it 
     is only 2D, so each face only contains two vertexes;
-Creator: John Cox (9-25-2016)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (9-25-2016)
+------------------------------------------------------------------------------------------------*/
 uniform uint uMaxPolygonFaces;
 layout (std430) buffer QuadTreeFaceBuffer
 {
@@ -91,7 +91,7 @@ layout (std430) buffer QuadTreeFaceBuffer
 };
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Acquires 4 new copies of faces from the AllPolygonFaces buffer, fills them out, and copies 
     them back in where they were found.  An atomic counter is used to make sure that each 
@@ -101,7 +101,7 @@ Parameters:
 Returns:
     True if all went well, false if there weren't enough faces left in the array.
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 bool GenerateFacesForNode(uint nodeIndex)
 {
     // attempt to avoid array overrun
@@ -163,13 +163,13 @@ bool GenerateFacesForNode(uint nodeIndex)
     return true;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The compute shader's startup function.  
 Parameters: None
 Returns:    None
-Creator: John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+Creator:    John Cox (1-16-2017)
+------------------------------------------------------------------------------------------------*/
 void main()
 {
     uint index = gl_GlobalInvocationID.x;

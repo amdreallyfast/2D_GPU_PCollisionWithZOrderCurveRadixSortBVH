@@ -21,7 +21,7 @@ Description:
     then to configure each shader separately.
 Parameters: None
 Returns:    None
-Creator: John Cox, 9-6-2016
+Creator:    John Cox, 9-6-2016
 ------------------------------------------------------------------------------------------------*/
 ParticleSsbo::ParticleSsbo(const std::vector<Particle> &allParticles) :
     SsboBase()  // generate buffers
@@ -41,7 +41,7 @@ Description:
     upon object death.
 Parameters: None
 Returns:    None
-Creator: John Cox, 9-6-2016
+Creator:    John Cox, 9-6-2016
 ------------------------------------------------------------------------------------------------*/
 ParticleSsbo::~ParticleSsbo()
 {
@@ -53,7 +53,7 @@ Description:
 Parameters: 
     computeProgramId    Self-explanatory
 Returns:    None
-Creator: John Cox, 11-24-2016
+Creator:    John Cox, 11-24-2016
 ------------------------------------------------------------------------------------------------*/
 void ParticleSsbo::ConfigureCompute(unsigned int computeProgramId, const std::string &bufferNameInShader)
 {
@@ -100,7 +100,7 @@ Parameters:
     RenderProgramId     Self-explanatory
     drawStyle           Expected to be GL_POINTS.
 Returns:    None
-Creator: John Cox, 11-24-2016
+Creator:    John Cox, 11-24-2016
 ------------------------------------------------------------------------------------------------*/
 void ParticleSsbo::ConfigureRender(unsigned int renderProgramId, unsigned int drawStyle)
 {

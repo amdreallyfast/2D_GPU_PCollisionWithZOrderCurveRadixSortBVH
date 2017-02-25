@@ -8,7 +8,7 @@ Description:
 Parameters: None
 Returns:    
     See descriptions.
-Creator: John Cox, 1/2017
+Creator:    John Cox, 1/2017
 ------------------------------------------------------------------------------------------------*/
 static unsigned int GetNewStorageBlockBindingPointIndex()
 {
@@ -31,7 +31,7 @@ Description:
 
 Parameters: None
 Returns:    None
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 SsboBase::SsboBase() :
     _vaoId(0),
@@ -50,7 +50,7 @@ Description:
     nothing.
 Parameters: None
 Returns:    None
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 SsboBase::~SsboBase()
 {
@@ -64,7 +64,7 @@ Description:
 Parameters: None
 Returns:    
     A copy of the VAO's ID.
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::VaoId() const
 {
@@ -77,7 +77,7 @@ Description:
 Parameters: None
 Returns:
     A copy of the VBO's ID.
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::BufferId() const
 {
@@ -91,7 +91,7 @@ Description:
 Parameters: None
 Returns:
     A copy of the draw style GLenum.
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::DrawStyle() const
 {
@@ -104,7 +104,7 @@ Description:
 Parameters: None
 Returns:
     See description.
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::NumVertices() const
 {
@@ -123,7 +123,7 @@ unsigned int SsboBase::NumVertices() const
 //Parameters: None
 //Returns:
 //    See description.
-//Creator: John Cox, 9-20-2016
+//Creator:    John Cox, 9-20-2016
 //------------------------------------------------------------------------------------------------*/
 //unsigned int SsboBase::GetStorageBlockBindingPointIndexForBuffer(const std::string &bufferNameInShader)
 //{

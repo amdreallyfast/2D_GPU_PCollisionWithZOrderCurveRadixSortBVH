@@ -10,7 +10,7 @@ Description:
 Parameters: 
     faceCollection  Self-explanatory
 Returns:    None
-Creator: John Cox, 9-8-2016
+Creator:    John Cox, 9-8-2016
 ------------------------------------------------------------------------------------------------*/
 PolygonSsbo::PolygonSsbo(const std::vector<PolygonFace> &faceCollection) :
     SsboBase()  // generate buffers
@@ -33,7 +33,7 @@ Description:
     upon object death.
 Parameters: None
 Returns:    None
-Creator: John Cox, 9-8-2016
+Creator:    John Cox, 9-8-2016
 ------------------------------------------------------------------------------------------------*/
 PolygonSsbo::~PolygonSsbo()
 {
@@ -48,7 +48,7 @@ Description:
 Parameters: 
     computeProgramId    Self-explanatory
 Returns:    None
-Creator: John Cox, 11-24-2016
+Creator:    John Cox, 11-24-2016
 ------------------------------------------------------------------------------------------------*/
 void PolygonSsbo::ConfigureCompute(unsigned int computeProgramId, const std::string &bufferNameInShader)
 {
@@ -79,7 +79,7 @@ Parameters:
     RenderProgramId     Self-explanatory
     drawStyle           Expected to be GL_LINES (2D program) or GL_TRIANGLES (3D program).
 Returns:    None
-Creator: John Cox, 11-24-2016
+Creator:    John Cox, 11-24-2016
 ------------------------------------------------------------------------------------------------*/
 void PolygonSsbo::ConfigureRender(unsigned int renderProgramId, unsigned int drawStyle)
 {

@@ -10,7 +10,7 @@ Description:
 Parameters:
 faceCollection  Self-explanatory
 Returns:    None
-Creator: John Cox, 1-16-2017
+Creator:    John Cox, 1-16-2017
 ------------------------------------------------------------------------------------------------*/
 QuadTreeNodeSsbo::QuadTreeNodeSsbo(const std::vector<ParticleQuadTreeNode> &nodeCollection) :
     SsboBase()  // generate buffers
@@ -32,7 +32,7 @@ Description:
 upon object death.
 Parameters: None
 Returns:    None
-Creator: John Cox, 1-16-2017
+Creator:    John Cox, 1-16-2017
 ------------------------------------------------------------------------------------------------*/
 QuadTreeNodeSsbo::~QuadTreeNodeSsbo()
 {
@@ -47,7 +47,7 @@ be used in each shader.  No member variables are altered in this function.
 Parameters:
 computeProgramId    Self-explanatory
 Returns:    None
-Creator: John Cox, 1-16-2017
+Creator:    John Cox, 1-16-2017
 ------------------------------------------------------------------------------------------------*/
 void QuadTreeNodeSsbo::ConfigureCompute(unsigned int computeProgramId, const std::string &bufferNameInShader)
 {
@@ -77,7 +77,7 @@ Description:
 Parameters:
     irrelevant
 Returns:    None
-Creator: John Cox, 1-16-2017
+Creator:    John Cox, 1-16-2017
 ------------------------------------------------------------------------------------------------*/
 void QuadTreeNodeSsbo::ConfigureRender(unsigned int, unsigned int)
 {

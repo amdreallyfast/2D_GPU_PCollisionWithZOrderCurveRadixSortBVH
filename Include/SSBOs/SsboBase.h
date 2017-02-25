@@ -6,7 +6,7 @@
 Description:
     Defines the constructor, which gives the members zero values, and the destructor, which 
     deletes any allocated buffers.  
-Creator: John Cox, 9-20-2016
+Creator:    John Cox, 9-20-2016
 ------------------------------------------------------------------------------------------------*/
 class SsboBase
 {

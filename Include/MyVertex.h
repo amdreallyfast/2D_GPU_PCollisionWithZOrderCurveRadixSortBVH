@@ -6,7 +6,7 @@
 /*------------------------------------------------------------------------------------------------
 Description:
     Stores all info necessary to draw a single vertex.
-Creator: John Cox (6-12-2016)
+Creator:    John Cox (6-12-2016)
 ------------------------------------------------------------------------------------------------*/
 struct MyVertex
 {
@@ -22,7 +22,7 @@ struct MyVertex
         pos     The particle's position in window space.  
         normal  Self-explanatory.
     Returns:    None
-    Creator: John Cox, 9-25-2016
+    Creator:    John Cox, 9-25-2016
     -------------------------------------------------------------------------------------------*/
     MyVertex(const glm::vec2 &pos, const glm::vec2 &normal) :
         _position(pos, 0.0f, 1.0f),
