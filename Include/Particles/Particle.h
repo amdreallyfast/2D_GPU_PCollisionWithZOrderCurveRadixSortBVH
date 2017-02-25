@@ -19,7 +19,7 @@ struct Particle
         I want the first run of the particles to be reset to an emitter.
     Parameters: None
     Returns:    None
-    Creator: John Cox, 10-2-2016
+    Creator:    John Cox, 10-2-2016
     -------------------------------------------------------------------------------------------*/
     Particle() :
         // glm structures already have "set to 0" constructors

@@ -36,7 +36,7 @@ ComputeParticleUpdate::ComputeParticleUpdate(unsigned int numParticles,
 
     ShaderStorage &shaderStorageRef = ShaderStorage::GetInstance();
 
-    _unifLocParticleCount = shaderStorageRef.GetUniformLocation(computeShaderKey, "uMaxParticleCount");
+    _unifLocParticleCount = shaderStorageRef.GetUniformLocation(computeShaderKey, "uMaxParticles");
     _unifLocParticleRegionCenter = shaderStorageRef.GetUniformLocation(computeShaderKey, "uParticleRegionCenter");
     _unifLocParticleRegionRadiusSqr = shaderStorageRef.GetUniformLocation(computeShaderKey, "uParticleRegionRadiusSqr");
     _unifLocDeltaTimeSec = shaderStorageRef.GetUniformLocation(computeShaderKey, "uDeltaTimeSec");

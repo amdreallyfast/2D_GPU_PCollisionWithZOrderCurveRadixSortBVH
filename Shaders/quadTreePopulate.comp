@@ -43,7 +43,7 @@ struct ParticleQuadTreeNode
 /*------------------------------------------------------------------------------------------------
 Description:
     Stores info about a single particle.  Must match the version on the CPU side.
-Creator: John Cox (9-25-2016)
+Creator:    John Cox (9-25-2016)
 ------------------------------------------------------------------------------------------------*/
 struct Particle
 {
@@ -61,7 +61,7 @@ struct Particle
 Description:
     The SSBO that contains all the ParticleQuadTreeNodes that this simulation is running.  
     Rather self-explanatory.
-Creator: John Cox (1-10-2017)
+Creator:    John Cox (1-10-2017)
 ------------------------------------------------------------------------------------------------*/
 layout (std430) buffer QuadTreeNodeBuffer
 {
@@ -75,7 +75,7 @@ Description:
     
     Binding points are relevant only to a particular shader (that is, not to the OpenGL context 
     as a whole) and are set in the SSBO's ConfigureCompute(...) function.
-Creator: John Cox (9-25-2016)
+Creator:    John Cox (9-25-2016)
 ------------------------------------------------------------------------------------------------*/
 uniform uint uMaxParticles;
 layout (std430) buffer ParticleBuffer
@@ -92,7 +92,7 @@ Description:
     child nodes.
 Parameters: None
 Returns:    None
-Creator: John Cox (1-12-2017) (adapted from CPU version, 12-17-2016)
+Creator:    John Cox (1-12-2017) (adapted from CPU version, 12-17-2016)
 ------------------------------------------------------------------------------------------------*/
 uniform float uParticleRegionRadius;
 uniform vec4 uParticleRegionCenter;

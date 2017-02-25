@@ -199,43 +199,46 @@ void Init()
     shaderStorageRef.LinkShader(freeTypeShaderKey);
     GLuint freeTypeProgramId = shaderStorageRef.GetShaderProgram(freeTypeShaderKey);
     gTextAtlases.Init("ThirdParty/freetype-2.6.1/FreeSans.ttf", freeTypeProgramId);
-    //gTextAtlases.Init("freetype-2.6.1/FreeSans.ttf", freeTypeProgramId);
-    //gTextAtlases.Init("C:/Users/amdre/OneDrive/Documents/GitHub/2D_GPU_PCollisionWithZOrderCurveRadixSortBVH/ThirdParty/freetype-2.6.1/FreeSans.ttf", freeTypeProgramId);
-    //gTextAtlases.Init("FreeSans.ttf", freeTypeProgramId);
-
+    
     // for the particle compute shader stuff
     std::string computeShaderUpdateKey = "compute particle update";
-    std::string shaderFilePath = "Shaders/particleUpdate.comp";
+    std::string shaderFilePath = "Shaders/ParticleUpdate.comp";
     shaderStorageRef.NewShader(computeShaderUpdateKey);
     shaderStorageRef.AddShaderFile(computeShaderUpdateKey, shaderFilePath, GL_COMPUTE_SHADER);
     shaderStorageRef.LinkShader(computeShaderUpdateKey);
 
     std::string computeShaderResetKey = "compute particle reset";
-    shaderFilePath = "Shaders/particleReset.comp";
+    shaderFilePath = "Shaders/ParticleReset.comp";
     shaderStorageRef.NewShader(computeShaderResetKey);
     shaderStorageRef.AddShaderFile(computeShaderResetKey, shaderFilePath, GL_COMPUTE_SHADER);
     shaderStorageRef.LinkShader(computeShaderResetKey);
 
+    std::string computeShaderParticleSortPrepKey = "compute particle sort prep";
+    shaderFilePath = "Shaders/ParticleSortPrep.comp";
+    shaderStorageRef.NewShader(computeShaderParticleSortPrepKey);
+    shaderStorageRef.AddShaderFile(computeShaderParticleSortPrepKey, shaderFilePath, GL_COMPUTE_SHADER);
+    shaderStorageRef.LinkShader(computeShaderParticleSortPrepKey);
+
     std::string computeShaderQuadTreeResetKey = "compute quad tree reset";
-    shaderFilePath = "Shaders/quadTreeReset.comp";
+    shaderFilePath = "Shaders/QuadTreeReset.comp";
     shaderStorageRef.NewShader(computeShaderQuadTreeResetKey);
     shaderStorageRef.AddShaderFile(computeShaderQuadTreeResetKey, shaderFilePath, GL_COMPUTE_SHADER);
     shaderStorageRef.LinkShader(computeShaderQuadTreeResetKey);
 
     std::string computeQuadTreePopulateKey = "compute quad tree populate";
-    shaderFilePath = "Shaders/quadTreePopulate.comp";
+    shaderFilePath = "Shaders/QuadTreePopulate.comp";
     shaderStorageRef.NewShader(computeQuadTreePopulateKey);
     shaderStorageRef.AddShaderFile(computeQuadTreePopulateKey, shaderFilePath, GL_COMPUTE_SHADER);
     shaderStorageRef.LinkShader(computeQuadTreePopulateKey);
 
     std::string computeQuadTreeParticleColliderKey = "compute quad tree collider";
-    shaderFilePath = "Shaders/quadTreeParticleCollisions.comp";
+    shaderFilePath = "Shaders/QuadTreeParticleCollisions.comp";
     shaderStorageRef.NewShader(computeQuadTreeParticleColliderKey);
     shaderStorageRef.AddShaderFile(computeQuadTreeParticleColliderKey, shaderFilePath, GL_COMPUTE_SHADER);
     shaderStorageRef.LinkShader(computeQuadTreeParticleColliderKey);
 
     std::string computeQuadTreeGenerateGeometryKey = "compute quad tree generate geometry";
-    shaderFilePath = "Shaders/quadTreeGenerateGeometry.comp";
+    shaderFilePath = "Shaders/QuadTreeGenerateGeometry.comp";
     shaderStorageRef.NewShader(computeQuadTreeGenerateGeometryKey);
     shaderStorageRef.AddShaderFile(computeQuadTreeGenerateGeometryKey, shaderFilePath, GL_COMPUTE_SHADER);
     shaderStorageRef.LinkShader(computeQuadTreeGenerateGeometryKey);
@@ -246,16 +249,16 @@ void Init()
     // particle state, so it isn't the same as the geometry's render shader)
     std::string renderParticlesShaderKey = "render particles";
     shaderStorageRef.NewShader(renderParticlesShaderKey);
-    shaderStorageRef.AddShaderFile(renderParticlesShaderKey, "Shaders/particleRender.vert", GL_VERTEX_SHADER);
-    shaderStorageRef.AddShaderFile(renderParticlesShaderKey, "Shaders/particleRender.frag", GL_FRAGMENT_SHADER);
+    shaderStorageRef.AddShaderFile(renderParticlesShaderKey, "Shaders/ParticleRender.vert", GL_VERTEX_SHADER);
+    shaderStorageRef.AddShaderFile(renderParticlesShaderKey, "Shaders/ParticleRender.frag", GL_FRAGMENT_SHADER);
     shaderStorageRef.LinkShader(renderParticlesShaderKey);
 
     // a render shader specifically for the geometry (nothing special; just a transform, color 
     // white, pass through to frag shader)
     std::string renderGeometryShaderKey = "render geometry";
     shaderStorageRef.NewShader(renderGeometryShaderKey);
-    shaderStorageRef.AddShaderFile(renderGeometryShaderKey, "Shaders/geometry.vert", GL_VERTEX_SHADER);
-    shaderStorageRef.AddShaderFile(renderGeometryShaderKey, "Shaders/geometry.frag", GL_FRAGMENT_SHADER);
+    shaderStorageRef.AddShaderFile(renderGeometryShaderKey, "Shaders/Geometry.vert", GL_VERTEX_SHADER);
+    shaderStorageRef.AddShaderFile(renderGeometryShaderKey, "Shaders/Geometry.frag", GL_FRAGMENT_SHADER);
     shaderStorageRef.LinkShader(renderGeometryShaderKey);
     GLuint renderGeometryProgramId = shaderStorageRef.GetShaderProgram(renderGeometryShaderKey);
     //gUnifLocGeometryTransform = shaderStorageRef.GetUniformLocation(renderGeometryShaderKey, "transformMatrixWindowSpace");

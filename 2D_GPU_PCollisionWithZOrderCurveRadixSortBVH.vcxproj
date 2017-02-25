@@ -201,10 +201,11 @@
     <None Include="Shaders\FreeType.vert" />
     <None Include="Shaders\Geometry.frag" />
     <None Include="Shaders\Geometry.vert" />
+    <None Include="Shaders\MortonCodePrefixSums.comp" />
     <None Include="Shaders\ParticleRender.frag" />
     <None Include="Shaders\ParticleRender.vert" />
     <None Include="Shaders\ParticleReset.comp" />
-    <None Include="Shaders\ParticleSort.comp" />
+    <None Include="Shaders\ParticleScanAndSort.comp" />
     <None Include="Shaders\ParticleSortPrep.comp" />
     <None Include="Shaders\ParticleUpdate.comp" />
     <None Include="Shaders\QuadTreeGenerateGeometry.comp" />

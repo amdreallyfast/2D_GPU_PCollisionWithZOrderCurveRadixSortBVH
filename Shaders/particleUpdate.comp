@@ -46,7 +46,7 @@ Description:
     http://malideveloper.arm.com/resources/sample-code/introduction-compute-shaders-2/
 Creator:    John Cox (9-25-2016)
 ------------------------------------------------------------------------------------------------*/
-uniform uint uMaxParticleCount;
+uniform uint uMaxParticles;
 layout (std430) buffer ParticleBuffer
 {
     // Note: According to the documentation for shader storage buffer objects, "there can only 
@@ -100,7 +100,7 @@ Creator:    John Cox (9-25-2016)
 void main()
 {
     uint index = gl_GlobalInvocationID.x;
-    if (index < uMaxParticleCount)
+    if (index < uMaxParticles)
     {
         Particle p = AllParticles[index];
 
