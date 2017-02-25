@@ -146,14 +146,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ComputeParticleReset.cpp" />
-    <ClCompile Include="ComputeParticleUpdate.cpp" />
-    <ClCompile Include="ComputeQuadTreeGenerateGeometry.cpp" />
-    <ClCompile Include="ComputeQuadTreeParticleCollisions.cpp" />
-    <ClCompile Include="ComputeQuadTreePopulate.cpp" />
-    <ClCompile Include="ComputeQuadTreeReset.cpp" />
-    <ClCompile Include="FreeTypeAtlas.cpp" />
-    <ClCompile Include="FreeTypeEncapsulated.cpp" />
+    <ClCompile Include="ComputeControllers\ParticleReset.cpp" />
+    <ClCompile Include="ComputeControllers\ParticleUpdate.cpp" />
+    <ClCompile Include="ComputeControllers\QuadTreeGenerateGeometry.cpp" />
+    <ClCompile Include="ComputeControllers\QuadTreeParticleCollisions.cpp" />
+    <ClCompile Include="ComputeControllers\QuadTreePopulate.cpp" />
+    <ClCompile Include="ComputeControllers\QuadTreeReset.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MinMaxVelocity.cpp" />
     <ClCompile Include="OpenGlErrorHandling.cpp" />
@@ -164,38 +162,28 @@
     <ClCompile Include="PolygonSsbo.cpp" />
     <ClCompile Include="QuadTreeNodeSsbo.cpp" />
     <ClCompile Include="RandomToast.cpp" />
-    <ClCompile Include="ShaderStorage.cpp" />
+    <ClCompile Include="RenderFrameRate\FreeTypeAtlas.cpp" />
+    <ClCompile Include="RenderFrameRate\FreeTypeEncapsulated.cpp" />
+    <ClCompile Include="RenderFrameRate\Stopwatch.cpp" />
+    <ClCompile Include="Shaders\ShaderStorage.cpp" />
     <ClCompile Include="SsboBase.cpp" />
-    <ClCompile Include="Stopwatch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="freeType.frag" />
-    <None Include="freeType.vert" />
-    <None Include="particleRender.frag" />
-    <None Include="particleRender.vert" />
-    <None Include="geometry.frag" />
-    <None Include="geometry.vert" />
-    <None Include="particleReset.comp" />
-    <None Include="particleUpdate.comp" />
-    <None Include="quadTreeGenerateGeometry.comp" />
-    <None Include="quadTreeParticleCollisions.comp" />
-    <None Include="quadTreePopulate.comp" />
-    <None Include="quadTreeReset.comp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ComputeParticleReset.h" />
-    <ClInclude Include="ComputeParticleUpdate.h" />
-    <ClInclude Include="ComputeQuadTreeGenerateGeometry.h" />
-    <ClInclude Include="ComputeQuadTreeParticleCollisions.h" />
-    <ClInclude Include="ComputeQuadTreePopulate.h" />
-    <ClInclude Include="ComputeQuadTreeReset.h" />
-    <ClInclude Include="FreeTypeAtlas.h" />
-    <ClInclude Include="FreeTypeEncapsulated.h" />
+    <ClInclude Include="ComputeControllers\ParticleReset.h" />
+    <ClInclude Include="ComputeControllers\ParticleUpdate.h" />
+    <ClInclude Include="ComputeControllers\QuadTreeGenerateGeometry.h" />
+    <ClInclude Include="ComputeControllers\QuadTreeParticleCollisions.h" />
+    <ClInclude Include="ComputeControllers\QuadTreePopulate.h" />
+    <ClInclude Include="ComputeControllers\QuadTreeReset.h" />
     <ClInclude Include="MyVertex.h" />
     <ClInclude Include="ParticleQuadTree.h" />
     <ClInclude Include="ParticleQuadTreeNode.h" />
     <ClInclude Include="PolygonSsbo.h" />
     <ClInclude Include="QuadTreeNodeSsbo.h" />
+    <ClInclude Include="RenderFrameRate\FreeTypeAtlas.h" />
+    <ClInclude Include="RenderFrameRate\FreeTypeEncapsulated.h" />
+    <ClInclude Include="RenderFrameRate\Stopwatch.h" />
+    <ClInclude Include="Shaders\ShaderStorage.h" />
     <ClInclude Include="SsboBase.h" />
     <ClInclude Include="IParticleEmitter.h" />
     <ClInclude Include="MinMaxVelocity.h" />
@@ -206,8 +194,20 @@
     <ClInclude Include="ParticleSsbo.h" />
     <ClInclude Include="PolygonFace.h" />
     <ClInclude Include="RandomToast.h" />
-    <ClInclude Include="ShaderStorage.h" />
-    <ClInclude Include="Stopwatch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\freeType.frag" />
+    <None Include="Shaders\freeType.vert" />
+    <None Include="Shaders\geometry.frag" />
+    <None Include="Shaders\geometry.vert" />
+    <None Include="Shaders\particleRender.frag" />
+    <None Include="Shaders\particleRender.vert" />
+    <None Include="Shaders\particleReset.comp" />
+    <None Include="Shaders\particleUpdate.comp" />
+    <None Include="Shaders\quadTreeGenerateGeometry.comp" />
+    <None Include="Shaders\quadTreeParticleCollisions.comp" />
+    <None Include="Shaders\quadTreePopulate.comp" />
+    <None Include="Shaders\quadTreeReset.comp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -38,7 +38,7 @@
 
 // for basic OpenGL stuff
 #include "OpenGlErrorHandling.h"
-#include "ShaderStorage.h"
+#include "Shaders/ShaderStorage.h"
 
 // for particles, where they live, and how to update them
 #include "glm/vec2.hpp"
@@ -46,20 +46,20 @@
 #include "ParticleSsbo.h"
 #include "PolygonSsbo.h"
 #include "QuadTreeNodeSsbo.h"
-#include "ComputeQuadTreeReset.h"
-#include "ComputeQuadTreeGenerateGeometry.h"
-#include "ComputeParticleReset.h"
-#include "ComputeParticleUpdate.h"
-#include "ComputeQuadTreePopulate.h"
-#include "ComputeQuadTreeParticleCollisions.h"
+#include "ComputeControllers/ParticleReset.h"
+#include "ComputeControllers/ParticleUpdate.h"
+#include "ComputeControllers/QuadTreeReset.h"
+#include "ComputeControllers/QuadTreeGenerateGeometry.h"
+#include "ComputeControllers/QuadTreePopulate.h"
+#include "ComputeControllers/QuadTreeParticleCollisions.h"
 
 // for moving the shapes around in window space
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
 // for the frame rate counter
-#include "FreeTypeEncapsulated.h"
-#include "Stopwatch.h"
+#include "RenderFrameRate/FreeTypeEncapsulated.h"
+#include "RenderFrameRate/Stopwatch.h"
 
 Stopwatch gTimer;
 FreeTypeEncapsulated gTextAtlases;
