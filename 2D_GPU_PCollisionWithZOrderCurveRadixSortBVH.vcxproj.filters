@@ -139,6 +139,7 @@
     <ClInclude Include="Include\RenderFrameRate\FreeTypeEncapsulated.h">
       <Filter>Include\RenderFrameRate</Filter>
     </ClInclude>
+    <ClInclude Include="Include\ComputeControllers\ParticleSort.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shaders">
@@ -212,5 +213,6 @@
     <None Include="Shaders\freeType.vert">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="Shaders\mortonCodeSort.comp" />
   </ItemGroup>
 </Project>

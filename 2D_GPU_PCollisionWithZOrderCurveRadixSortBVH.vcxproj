@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\ComputeControllers\ParticleReset.h" />
+    <ClInclude Include="Include\ComputeControllers\ParticleSort.h" />
     <ClInclude Include="Include\ComputeControllers\ParticleUpdate.h" />
     <ClInclude Include="Include\ComputeControllers\QuadTreeGenerateGeometry.h" />
     <ClInclude Include="Include\ComputeControllers\QuadTreeParticleCollisions.h" />
@@ -200,6 +201,7 @@
     <None Include="Shaders\freeType.vert" />
     <None Include="Shaders\geometry.frag" />
     <None Include="Shaders\geometry.vert" />
+    <None Include="Shaders\mortonCodeSort.comp" />
     <None Include="Shaders\particleRender.frag" />
     <None Include="Shaders\particleRender.vert" />
     <None Include="Shaders\particleReset.comp" />
