@@ -3,7 +3,7 @@
 #include "ThirdParty/glload/include/glload/gl_4_4.h"
 #include "Shaders/ShaderStorage.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Gives members initial values.
     Finds the uniforms for the "generate geometry" compute shader and gives them initial values.
@@ -14,7 +14,7 @@ Parameters:
     computeShaderKey    Used to look up the shader's uniform and program ID.
 Returns:    None
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeQuadTreeGenerateGeometry::ComputeQuadTreeGenerateGeometry(unsigned int maxNodes, 
     unsigned int maxPolygonFaces, const std::string &computeShaderKey) :
     _computeProgramId(0),
@@ -64,19 +64,19 @@ ComputeQuadTreeGenerateGeometry::ComputeQuadTreeGenerateGeometry(unsigned int ma
     // no binding for the atomic counter copy buffer
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Deletes the buffer for the atomic counters.
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeQuadTreeGenerateGeometry::~ComputeQuadTreeGenerateGeometry()
 {
     glDeleteBuffers(1, &_atomicCounterBufferId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Resets the atomic counters nd dispatches the shader.
 
@@ -84,7 +84,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ComputeQuadTreeGenerateGeometry::GenerateGeometry()
 {
     glUseProgram(_computeProgramId);
@@ -123,7 +123,7 @@ void ComputeQuadTreeGenerateGeometry::GenerateGeometry()
     glUseProgram(0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the number of polygon faces that were in use after the last call to 
     GenerateGeometry().
@@ -131,7 +131,7 @@ Parameters: None
 Returns:    
     See Description.
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int ComputeQuadTreeGenerateGeometry::NumActiveFaces() const
 {
     return _facesInUse;

@@ -2,7 +2,7 @@
 
 #include <string>
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Encapsulate quad tree resetting via compute shader.  The number of availble nodes is reset 
     to the number of starting nodes (the quad tree is pre-subdivided, so the number of starting 
@@ -11,7 +11,7 @@ Description:
 
     Note: No OpenGL objects are generated that need to be destroyed, so there is no destructor.
 Creator:    John Cox (1-14-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ComputeQuadTreeReset
 {
 public:

@@ -10,7 +10,7 @@
 #include <time.h>
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Generates atomic counters for use in the "particle reset" compute shader.
     Looks up all uniforms in the compute shader.
@@ -23,7 +23,7 @@ Parameters:
     computeShaderKey    Used to look up (1) the compute shader ID and (2) uniform locations.
 Returns:    None
 Creator:    John Cox (11-24-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeParticleReset::ComputeParticleReset(unsigned int numParticles, 
     const std::string &computeShaderKey)
 {
@@ -76,19 +76,19 @@ ComputeParticleReset::ComputeParticleReset(unsigned int numParticles,
     glBindBufferBase(GL_ATOMIC_COUNTER_BUFFER, 1, _atomicCounterBufferId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Cleans up buffers that were allocated in this object.
 Parameters: None
 Returns:    None
 Creator:    John Cox (11-24-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeParticleReset::~ComputeParticleReset()
 {
     glDeleteBuffers(1, &_atomicCounterBufferId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Adds a point emitter to internal storage.  This is used to initialize particles.  If there 
     multiple emitters, then the update will need to perform multiple calls to the compute 
@@ -104,7 +104,7 @@ Parameters:
 Returns:    
     True if the emitter was added, otherwise false.
 Creator:    John Cox (9-18-2016)    (created prior to this class in an earlier design)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 bool ComputeParticleReset::AddEmitter(const IParticleEmitter *pEmitter)
 {
     const ParticleEmitterPoint *pointEmitter =
@@ -126,7 +126,7 @@ bool ComputeParticleReset::AddEmitter(const IParticleEmitter *pEmitter)
     return false;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Resets the atomic counters and dispatches the shader.
 
@@ -146,7 +146,7 @@ Parameters:
 Returns:    None
 Creator:    John Cox (10-10-2016)
             (created in an earlier class, but later split into a dedicated class)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ComputeParticleReset::ResetParticles(unsigned int particlesPerEmitterPerFrame)
 {
     if (_pointEmitters.empty() && _barEmitters.empty())

@@ -4,7 +4,7 @@
 #include "Include/Particles/ParticleQuadTreeNode.h"
 #include "ThirdParty/glm/vec4.hpp"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Starts up the quad tree that will contain the particles.  The constructor initializes the 
     values for all the nodes, in particular calculating each node's edges and neighbors.  After 
@@ -16,7 +16,7 @@ Description:
     in all but the initial frames.  It took some extra calculations up front, but the initial
     subdivision should cut down on the subdivisions that are needed on every frame.
 Creator:    John Cox (1-10-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ParticleQuadTree
 {
 public:

@@ -30,7 +30,7 @@ struct point {
     GLfloat t;
 };
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Initializes members to default values.  In this demo program, these are handled by a 
     FreeTypeEncapsulate object.
@@ -41,7 +41,7 @@ Parameters:
                             program.
 Returns:    None
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 FreeTypeAtlas::FreeTypeAtlas(const int uniformTextSamplerLoc, const int uniformTextColorLoc) :
     _textureId(0),
     _textureUnit(0),
@@ -56,21 +56,21 @@ FreeTypeAtlas::FreeTypeAtlas(const int uniformTextSamplerLoc, const int uniformT
     memset(_glyphCharInfo, 0, sizeof(_glyphCharInfo));
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     This class generates and stores its own texture and vertex buffer, so it is responsible for 
     cleaning them up when it is done.
 Parameters: None
 Returns:    None
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 FreeTypeAtlas::~FreeTypeAtlas()
 {
     glDeleteTextures(1, &_textureId);
     glDeleteBuffers(1, &_vboId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Creates the texture (the "atlas") for the font's typeface, fills it in, then creates the 
     vertex buffer storage and its associated vertex array object for the quads that will be the 
@@ -85,7 +85,7 @@ Returns:
     True if all went well, otherwise false.  At this time (8-20-2016), there is no way for it 
     return false.
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 bool FreeTypeAtlas::Init(const FT_Face face, const int fontPixelHeightSize)
 {
     // configure the font's size
@@ -424,7 +424,7 @@ bool FreeTypeAtlas::Init(const FT_Face face, const int fontPixelHeightSize)
     return true;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Draws the provided string to the screen with the other arguments dictating details.
 
@@ -443,7 +443,7 @@ Parameters:
     color           A 4-float array with the order RGBA.
 Returns:    None
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void FreeTypeAtlas::RenderText(const std::string &str, const float posScreenCoord[2],
     const float userScale[2], const float color[4]) const
 {

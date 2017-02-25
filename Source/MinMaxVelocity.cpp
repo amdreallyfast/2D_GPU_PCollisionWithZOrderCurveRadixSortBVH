@@ -4,13 +4,13 @@
 #include "Include/RandomToast.h"
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Ensures that the object starts object with initialized values.
 Parameters: None
 Returns:    None
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 MinMaxVelocity::MinMaxVelocity() :
     _min(0.0f),
     _velocityDelta(0.0f),
@@ -18,7 +18,7 @@ MinMaxVelocity::MinMaxVelocity() :
 {
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Initializes the magnitudes of the minimum veocity and the velocity delta.
 Parameters: 
@@ -26,14 +26,14 @@ Parameters:
     max     The maximum velocity in window space.
 Returns:    None
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void MinMaxVelocity::SetMinMaxVelocity(const float min, const float max)
 {
     _min = min;
     _velocityDelta = max - min;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Initializes the minimum and delta velocity directions.  Normalizes the provided value, so the
     user does not need to normalize the direction themselves.
@@ -41,28 +41,28 @@ Parameters:
     dir     Self-explanatory.
 Returns:    None
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void MinMaxVelocity::SetDir(const glm::vec2 &dir)
 {
     _dir = glm::normalize(glm::vec4(dir, 0.0f, 1.0f));
     _useRandomDir = false;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Tells the object to use a random velocity direction every time "get new" is called instead of
     the provided direction.
 Parameters: None
 Returns:    None
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void MinMaxVelocity::UseRandomDir()
 {
     _dir = glm::vec4();
     _useRandomDir = true;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Generates a new velocity vector between the previously provided minimum and maximum values
     (or 0 if nothing was set after this object was instatiated) and in the provided direction 
@@ -72,7 +72,7 @@ Returns:
     A 2D vector whose magnitude is between the initialized "min" and "max" values and whose 
     direction is random.
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 glm::vec4 MinMaxVelocity::GetNew() const
 {
     //float velocityVariation = ((float)rand() * INVERSE_RAND_MAX) * _velocityDelta;
@@ -95,7 +95,7 @@ glm::vec4 MinMaxVelocity::GetNew() const
     }
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the emitter's minimum velocity.  It is used by
     ParticlePolygonComputeUpdater.cpp to tell the compute shader how fast particles should be
@@ -104,13 +104,13 @@ Parameters: None
 Returns:
     A float.
 Creator:    John Cox (10-10-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 float MinMaxVelocity::GetMinVelocity() const
 {
     return _min;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the emitter's delta velocity.  It is used by
     ParticlePolygonComputeUpdater.cpp to tell the compute shader the velocity range that reset
@@ -119,7 +119,7 @@ Parameters: None
 Returns:
 A float.
 Creator:    John Cox (10-10-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 float MinMaxVelocity::GetDeltaVelocity() const
 {
     return _velocityDelta;

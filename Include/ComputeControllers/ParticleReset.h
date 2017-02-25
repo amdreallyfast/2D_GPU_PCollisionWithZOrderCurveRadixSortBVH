@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Encapsulate particle reseting via compute shader.  Resetting involves taking inactive 
     particles and giving them a new position near a particle emitter plus giving them a new 
@@ -19,7 +19,7 @@ Description:
     Note: When this class goes "poof", it won't delete the emitter pointers.  This is ensured by
     only using const pointers.
 Creator:    John Cox (11-24-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ComputeParticleReset
 {
 public:

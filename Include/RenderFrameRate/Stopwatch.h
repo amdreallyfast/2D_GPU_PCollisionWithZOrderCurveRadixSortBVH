@@ -1,6 +1,6 @@
 #pragma once
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Call Init() to have it read the CPU frequency, then Start() to have it register a starting 
     time.  After that, Lap() will get you the number of seconds elapsed since Start() was called.
@@ -10,7 +10,7 @@ Description:
     2015, which is when I was still learning graphical programming and early stuff on game 
     engines.
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class Stopwatch
 {
 public:

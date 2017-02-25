@@ -9,13 +9,13 @@
 #include "Shaders/ShaderStorage.h"
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Gives member values default values.
 Parameters: None
 Returns:    None
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 FreeTypeEncapsulated::FreeTypeEncapsulated()
     :
     _haveInitialized(0),
@@ -25,19 +25,19 @@ FreeTypeEncapsulated::FreeTypeEncapsulated()
 {
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     ??do something? it shouldn't delete the program ID because that is the the shader storage's 
     job??
 Parameters: None
 Returns:    None
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 FreeTypeEncapsulated::~FreeTypeEncapsulated()
 {
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Finds the needed uniforms in the FreeType shader program and initializes the FreeType 
     library itself, but does not create any atlases.
@@ -45,7 +45,7 @@ Parameters: None
 Returns:    
     True if all went well, false if there were problems.  Writes error messages to stderr.
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 bool FreeTypeEncapsulated::Init(const std::string &trueTypeFontFilePath, const unsigned int programId)
 {
     if (programId == 0)
@@ -96,7 +96,7 @@ bool FreeTypeEncapsulated::Init(const std::string &trueTypeFontFilePath, const u
     return true;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Retrieves a FreeTypeAtlas for the given font size.  If there is no atlas available for that 
     font size, it is created.
@@ -112,7 +112,7 @@ Returns:
     A const shared pointer to a FreeTypeAtlas object, or 0 if something went wrong.  It is const 
     so that the user cannot even try to re-initialize it.  Error messages are written to stderr.
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 const std::shared_ptr<FreeTypeAtlas> FreeTypeEncapsulated::GetAtlas(const int fontSize)
 {
     if (!_haveInitialized)

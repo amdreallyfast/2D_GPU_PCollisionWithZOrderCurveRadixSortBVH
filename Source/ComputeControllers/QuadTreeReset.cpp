@@ -4,7 +4,7 @@
 #include "Shaders/ShaderStorage.h"
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Gives members initial values.
     Finds the uniforms for the "generate geometry" compute shader and gives them initial values.
@@ -15,7 +15,7 @@ Parameters:
     computeShaderKey    Used to look up the shader's uniform and program ID.
 Returns:    None
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeQuadTreeReset::ComputeQuadTreeReset(unsigned int numStartingNodes, unsigned int maxNodes, 
     const std::string &computeShaderKey)
 {
@@ -34,7 +34,7 @@ ComputeQuadTreeReset::ComputeQuadTreeReset(unsigned int numStartingNodes, unsign
     glUseProgram(0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Dispatches the shader.
 
@@ -42,7 +42,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ComputeQuadTreeReset::ResetQuadTree()
 {
     GLuint numWorkGroupsX = (_totalNodeCount / 256) + 1;

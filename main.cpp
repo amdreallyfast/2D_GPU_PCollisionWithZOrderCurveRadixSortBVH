@@ -88,7 +88,7 @@ const unsigned int MAX_PARTICLE_COUNT = 100000;
 
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Creates a 32-point wireframe circle.
 
@@ -102,7 +102,7 @@ Returns:    None
 Exception:  Safe
 Creator:    John Cox (6-12-2016)
             Adapted for this program 1/7/2017
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void GenerateCircle(const glm::vec4 &center, const float radius, std::vector<PolygonFace> *putDataHere)
 {
     // a 32-point, 0.25 radius (window dimensions) circle will suffice for this demo
@@ -152,7 +152,7 @@ void GenerateCircle(const glm::vec4 &center, const float radius, std::vector<Pol
     }
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Governs window creation, the initial OpenGL configuration (face culling, depth mask, even
     though this is a 2D demo and that stuff won't be of concern), the creation of geometry, and
@@ -160,7 +160,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (3-7-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Init()
 {
     glEnable(GL_CULL_FACE);
@@ -338,7 +338,7 @@ void Init()
     gTimer.Start();
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Updates particle positions, generates the quad tree for the particles' new positions, and 
     commands a new draw.
@@ -346,7 +346,7 @@ Parameters: None
 Returns:    None
 Exception:  Safe
 Creator:    John Cox (1-2-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void UpdateAllTheThings()
 {
     // just hard-code it for this demo
@@ -418,7 +418,7 @@ void UpdateAllTheThings()
     glutPostRedisplay();
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     This is the rendering function.  It tells OpenGL to clear out some color and depth buffers,
     to set up the data to draw, to draw than stuff, and to report any errors that it came across.
@@ -428,7 +428,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Display()
 {
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -503,7 +503,7 @@ void Display()
     glutSwapBuffers();
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Tell's OpenGL to resize the viewport based on the arguments provided.  This is an 
     opportunity to call glViewport or glScissor to keep up with the change in size.
@@ -515,13 +515,13 @@ Parameters:
     h   The height of the window in pixels.
 Returns:    None
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Reshape(int w, int h)
 {
     glViewport(0, 0, w, h);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Executes when the user presses a key on the keyboard.
 
@@ -536,7 +536,7 @@ Parameters:
     y       The vertical window coordinates of the mouse's current position
 Returns:    None
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Keyboard(unsigned char key, int x, int y)
 {
     // this statement is mostly to get ride of an "unreferenced parameter" warning
@@ -554,7 +554,7 @@ void Keyboard(unsigned char key, int x, int y)
     }
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     I don't know what this does, but I've kept it around since early times, and this was the 
     comment given with it:
@@ -570,7 +570,7 @@ Parameters:
 Returns:
     ??what??
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int Defaults(unsigned int displayMode, int &width, int &height) 
 {
     // this statement is mostly to get ride of an "unreferenced parameter" warning
@@ -578,7 +578,7 @@ unsigned int Defaults(unsigned int displayMode, int &width, int &height)
     return displayMode; 
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Cleans up GPU memory.  This might happen when the processes die, but be a good memory steward
     and clean up properly.
@@ -589,7 +589,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void CleanupAll()
 {
     delete gpParticleBuffer;
@@ -605,7 +605,7 @@ void CleanupAll()
     delete gpQuadTreeGeometryGenerator;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Program start and end.
 Parameters:
@@ -614,7 +614,7 @@ Parameters:
 Returns:
     0 if program ended well, which it always does or it crashes outright, so returning 0 is fine
 Creator:    John Cox (2-13-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);

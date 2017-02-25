@@ -5,7 +5,7 @@
 #include "ThirdParty/glload/include/glload/gl_4_4.h"
 #include "Shaders/ShaderStorage.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Ensures that the object starts object with initialized values and that the buffer's size is 
     established.
@@ -22,7 +22,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator: John Cox, 9-6-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ParticleSsbo::ParticleSsbo(const std::vector<Particle> &allParticles) :
     SsboBase()  // generate buffers
 {
@@ -35,26 +35,26 @@ ParticleSsbo::ParticleSsbo(const std::vector<Particle> &allParticles) :
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Does nothing.  Exists to be declared virtual so that the base class' destructor is called
     upon object death.
 Parameters: None
 Returns:    None
 Creator: John Cox, 9-6-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ParticleSsbo::~ParticleSsbo()
 {
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Binds the SSBO object (a CPU-side thing) to its corresponding buffer in the shader (GPU).
 Parameters: 
     computeProgramId    Self-explanatory
 Returns:    None
 Creator: John Cox, 11-24-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ParticleSsbo::ConfigureCompute(unsigned int computeProgramId, const std::string &bufferNameInShader)
 {
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, _bufferId);
@@ -93,7 +93,7 @@ void ParticleSsbo::ConfigureCompute(unsigned int computeProgramId, const std::st
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Sets up the vertex attribute pointers for this SSBO's VAO.
 Parameters: 
@@ -101,7 +101,7 @@ Parameters:
     drawStyle           Expected to be GL_POINTS.
 Returns:    None
 Creator: John Cox, 11-24-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ParticleSsbo::ConfigureRender(unsigned int renderProgramId, unsigned int drawStyle)
 {
     _drawStyle = drawStyle;

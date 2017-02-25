@@ -2,14 +2,14 @@
 
 #include "ThirdParty/glload/include/glload/gl_4_4.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     This was created for convenience as I've been making more and more SSBOs.
 Parameters: None
 Returns:    
     See descriptions.
 Creator: John Cox, 1/2017
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 static unsigned int GetNewStorageBlockBindingPointIndex()
 {
     static GLuint ssboBindingPointIndex = 0;
@@ -17,7 +17,7 @@ static unsigned int GetNewStorageBlockBindingPointIndex()
     return ssboBindingPointIndex++;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Gives members default values.
 
@@ -32,7 +32,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator: John Cox, 9-20-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 SsboBase::SsboBase() :
     _vaoId(0),
     _bufferId(0),
@@ -44,47 +44,47 @@ SsboBase::SsboBase() :
     glGenVertexArrays(1, &_vaoId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Cleans up the buffer and VAO.  If either is 0, then the glDelete*(...) call silently does 
     nothing.
 Parameters: None
 Returns:    None
 Creator: John Cox, 9-20-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 SsboBase::~SsboBase()
 {
     glDeleteBuffers(1, &_bufferId);
     glDeleteVertexArrays(1, &_vaoId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the vertex array object ID.
 Parameters: None
 Returns:    
     A copy of the VAO's ID.
 Creator: John Cox, 9-20-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::VaoId() const
 {
     return _vaoId;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the vertex buffer object's ID.
 Parameters: None
 Returns:
     A copy of the VBO's ID.
 Creator: John Cox, 9-20-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::BufferId() const
 {
     return _bufferId;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the draw style for the contained object (GL_TRIANGLES, GL_LINES, 
     GL_POINTS, etc.)
@@ -92,26 +92,26 @@ Parameters: None
 Returns:
     A copy of the draw style GLenum.
 Creator: John Cox, 9-20-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::DrawStyle() const
 {
     return _drawStyle;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the number of vertices in the SSBO.  Used in the glDrawArrays(...) call.
 Parameters: None
 Returns:
     See description.
 Creator: John Cox, 9-20-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int SsboBase::NumVertices() const
 {
     return _numVertices;
 }
 
-///*-----------------------------------------------------------------------------------------------
+///*------------------------------------------------------------------------------------------------
 //Description:
 //    At this point in my demos, I have three SSBO structures: particle, polygon face, and quad tree node.  The polygon face SSBO may end up being used more than once, so there is at least 3, possibly more, SSBOs that need unique binding points.  
 //    
@@ -124,7 +124,7 @@ unsigned int SsboBase::NumVertices() const
 //Returns:
 //    See description.
 //Creator: John Cox, 9-20-2016
-//-----------------------------------------------------------------------------------------------*/
+//------------------------------------------------------------------------------------------------*/
 //unsigned int SsboBase::GetStorageBlockBindingPointIndexForBuffer(const std::string &bufferNameInShader)
 //{
 //    static GLuint ssboBindingPointIndex = 0;

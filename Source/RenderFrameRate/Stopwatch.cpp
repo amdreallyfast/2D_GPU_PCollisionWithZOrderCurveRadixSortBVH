@@ -12,7 +12,7 @@ static double gInverseCpuTimerFrequency;
 static LARGE_INTEGER gStartCounter;
 static LARGE_INTEGER gLastLapCounter;
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Converts a CPU cycle counter into fractions of a second.
     counter     A LARGE_INTEGER (Windows-specific union of structs used for large or
@@ -21,19 +21,19 @@ Returns:
     A double indicating the fractions of a second corresponding to the argument counter.  This 
     is not "time elapsed" yet but is rather totally depended upon the "counter" argument.
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 static inline double CounterToSeconds(const LARGE_INTEGER counter)
 {
     return ((double)counter.QuadPart * gInverseCpuTimerFrequency);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Sets up members to default values.
 Parameters: None
 Returns:    None
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 Stopwatch::Stopwatch() :
     _haveInitialized(false)
 {
@@ -41,14 +41,14 @@ Stopwatch::Stopwatch() :
     gLastLapCounter.QuadPart = 0;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Reads the CPU's frequency.
     Must be called prior to use.  
 Parameters: None
 Returns:    None
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Stopwatch::Init()
 {
     // the "performance frequency" only changes on system reset, so it's ok to set it only 
@@ -61,14 +61,14 @@ void Stopwatch::Init()
     _haveInitialized = true;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Reads the CPU's clock counter and assumes it as the starting point for Lap() and TotalTime() 
     method calls.
 Parameters: None
 Returns:    None
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Stopwatch::Start()
 {
     if (!_haveInitialized)
@@ -84,7 +84,7 @@ void Stopwatch::Start()
     gLastLapCounter.QuadPart = gStartCounter.QuadPart;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Reads the CPU's clock counter, compares it to the time set by Start() or the last call to 
     Lap(), and returns the time since that call.
@@ -92,7 +92,7 @@ Parameters: None
 Returns:    
     Fractions of a seconds since the last call to Start() or Lap().  The fraction can be >1.
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 double Stopwatch::Lap()
 {
     if (!_haveInitialized)
@@ -114,7 +114,7 @@ double Stopwatch::Lap()
     return deltaTime;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Reads the CPU's clock counter, compares it to the time set by Start() or Reset(), and 
     returns the fractions of a second since then.
@@ -122,7 +122,7 @@ Parameters: None
 Returns:
     Fractions of a seconds since the last call to Start() or Reset().  The fraction can be >1.
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 double Stopwatch::TotalTime()
 {
     if (!_haveInitialized)
@@ -140,13 +140,13 @@ double Stopwatch::TotalTime()
     return deltaTime;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Reads the CPU's clock counter and resets the starting time.
 Parameters: None
 Returns:    None
 Creator:    John Cox (??-2015)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void Stopwatch::Reset()
 {
     if (!_haveInitialized)

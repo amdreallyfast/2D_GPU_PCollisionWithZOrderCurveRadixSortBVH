@@ -9,32 +9,32 @@
 #include <sstream>
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     It's a getter for a singleton...and...that's it.
 Parameters: None
 Returns:    None
 Creator:    John Cox (8-20-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ShaderStorage &ShaderStorage::GetInstance()
 {
     static ShaderStorage instance;
     return instance;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Ensures that the object starts object with initialized values.
 Parameters: None
 Returns:    None
 Creator:    John Cox (7-14-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ShaderStorage::ShaderStorage()
 {
     //??anything??
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Makes sure that there are no shader binaries or compiled programs associated with this 
     storage object that are still active.  It does not delete the maps, but just calls 
@@ -42,7 +42,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (7-16-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ShaderStorage::~ShaderStorage()
 {
     for (_BINARY_MAP::iterator itr = _shaderBinaries.begin(); itr != _shaderBinaries.end(); itr++)
@@ -62,7 +62,7 @@ ShaderStorage::~ShaderStorage()
     // let the maps destruct themselves
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Creates an empty collection of shader binaries under the provided program name.  No entry is 
     made in the "compiled programs" collection.  That only happens in the LinkShader(...) method.
@@ -79,7 +79,7 @@ Parameters:
                 If it already exists, it prints a message to stderr and immediately returns.
 Returns:    None
 Creator:    John Cox (7-16-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ShaderStorage::NewShader(const std::string &programKey)
 {
     if (_shaderBinaries.find(programKey) != _shaderBinaries.end())
@@ -96,7 +96,7 @@ void ShaderStorage::NewShader(const std::string &programKey)
     }
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Manual cleanup method.  If not called, everything will be cleaned up properly in the 
     destructor.
@@ -106,7 +106,7 @@ Parameters:
     programKey  Delete the compiled shader program associated with this string.
 Returns:    None
 Creator:    John Cox (7-16-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ShaderStorage::DeleteProgram(const std::string &programKey)
 {
     _PROGRAM_MAP::iterator itr = _compiledPrograms.find(programKey);
@@ -122,7 +122,7 @@ void ShaderStorage::DeleteProgram(const std::string &programKey)
     }
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Reads the specified file and attempts to compile it into the specified shader type.  Stores
     the binary in a collection of binaries under the specified key.
@@ -135,7 +135,7 @@ Parameters:
     shaderType  GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, etc.
 Returns:    None
 Creator:    John Cox (7-14-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ShaderStorage::AddShaderFile(const std::string &programKey, const std::string &filePath,
     const GLenum shaderType)
 {
@@ -190,7 +190,7 @@ void ShaderStorage::AddShaderFile(const std::string &programKey, const std::stri
     }
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Links the collection of binaries under the specified key into a compiled program, deletes 
     the shader binaries (no longer needed), adds the compiled program to the internal collection 
@@ -204,7 +204,7 @@ Returns:
     The ID of the resultant program, or 0 if no program was compiled (hopefully 0 is still an
     invalid value in the future.
 Creator:    John Cox (7-14-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 GLuint ShaderStorage::LinkShader(const std::string &programKey)
 {
     _BINARY_MAP::iterator itr = _shaderBinaries.find(programKey);
@@ -255,7 +255,7 @@ GLuint ShaderStorage::LinkShader(const std::string &programKey)
     return programId;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A getter for a compiled program.  
     
@@ -265,7 +265,7 @@ Parameters:
 Returns:
     The program ID for the requested shader, or 0 if requested shader not found.
 Creator:    John Cox (7-14-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 GLuint ShaderStorage::GetShaderProgram(const std::string &programKey) const
 {
     _PROGRAM_MAP::const_iterator compiledItr = _compiledPrograms.find(programKey);
@@ -287,7 +287,7 @@ GLuint ShaderStorage::GetShaderProgram(const std::string &programKey) const
     return compiledItr->second;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A getter for a uniform location within a compiled program.  
 
@@ -299,7 +299,7 @@ Returns:
     A uniform location, or -1 if (1) the requested program doesn't exist or (2) the uniform 
     could not be found.
 Creator:    John Cox (7-14-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 GLint ShaderStorage::GetUniformLocation(const std::string &programKey,
     const std::string &uniformName) const
 {
@@ -321,7 +321,7 @@ GLint ShaderStorage::GetUniformLocation(const std::string &programKey,
     return uniformLocation;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A getter for an attribute location within a compiled program.  
     
@@ -335,7 +335,7 @@ Returns:
     An attribute location, or -1 if (1) the requested program doesn't exist or (2) the uniform 
     could not be found.
 Creator:    John Cox (7-14-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 GLint ShaderStorage::GetAttributeLocation(const std::string &programKey,
     const std::string &attributeName) const
 {

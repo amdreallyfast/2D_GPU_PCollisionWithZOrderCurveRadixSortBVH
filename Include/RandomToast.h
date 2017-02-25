@@ -2,7 +2,7 @@
 
 #include "ThirdParty/glm/vec3.hpp"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Both the "min max velocity" and "particle emiter bar" objects use randomness, so rather than
     have them both attempting to seed random, I decided to put the randomness handling off on its
@@ -17,7 +17,7 @@ Description:
     And why the "Toast" in the file name?  Because this is a randomness handler and I thought of 
     toast.  2 + 2 = toast, obviously.
 Creator:    John Cox (6-25-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 
 float RandomOnRange0to1();
 unsigned long Random();

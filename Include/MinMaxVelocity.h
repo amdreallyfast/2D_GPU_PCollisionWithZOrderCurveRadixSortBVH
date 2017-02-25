@@ -3,7 +3,7 @@
 #include "ThirdParty/glm/vec2.hpp"
 #include "ThirdParty/glm/vec4.hpp"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Each particle emitter needs be able to generate a velocity direction and magnitude within
     certain constraints.  This class encapsulates these requirements.
@@ -12,7 +12,7 @@ Description:
     have all the information to use this class upon their creation and will need to initialize 
     this class post creation.
 Creator:    John Cox (7-4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class MinMaxVelocity
 {
 public:

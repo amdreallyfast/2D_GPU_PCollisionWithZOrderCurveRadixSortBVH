@@ -7,14 +7,14 @@
 
 #include <string>
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Once initialized, it will store everything necessary to render the text of a TrueType font.  
     This should not be accessed directly except for the RenderText(...) function, and even that 
     should be accessed through FreeTypeEncapsulated (may need a better name), which is 
     responsible for storing atlases that are attributed to a specific font size.
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class FreeTypeAtlas
 {
 public:

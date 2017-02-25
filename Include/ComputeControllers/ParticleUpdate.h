@@ -3,7 +3,7 @@
 #include <string>
 #include "ThirdParty/glm/vec4.hpp"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Encapsulates the following particle updates via compute shader:
     (1) Updates particle positions based on the net force that was applied to them in the
@@ -17,7 +17,7 @@ Description:
     Note: This class is not concerned with the particle SSBO.  It is concerned with uniforms and
     summoning the shader.  SSBO setup is performed in the appropriate SSBO object.
 Creator:    John Cox (11-24-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ComputeParticleUpdate
 {
 public:

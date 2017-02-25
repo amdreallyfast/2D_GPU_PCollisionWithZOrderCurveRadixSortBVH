@@ -12,7 +12,7 @@
 #include <memory>   // for the shared pointer
 #include <map>      // for storing the atlas pointers
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Stores TrueType texture atlases (FreeTypeAtlas) that are associated with a particular shader 
     program.  In practice, there will likely be only one shader program for rendering 
@@ -21,7 +21,7 @@ Description:
     The name may need work.  I didn't know what else to call it because it handles extra-atlas 
     overhead work and I didn't want to call it a "manager", which is equally unhelpful.
 Creator:    John Cox (4-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class FreeTypeEncapsulated
 {
 public:

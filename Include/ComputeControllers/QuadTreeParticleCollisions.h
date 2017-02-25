@@ -3,13 +3,13 @@
 #include <string>
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Controls the compute shader that checks for particle collisions within nodes and their 
     neighbors.  There is one shader dispatched for every particle.
 
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ComputeParticleQuadTreeCollisions
 {
 public:

@@ -1,0 +1,72 @@
+#version 440
+
+layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+
+
+/*------------------------------------------------------------------------------------------------
+Description:
+    Stores info about a single particle.  Must match the version on the CPU side.
+Creator: John Cox (9-25-2016)
+------------------------------------------------------------------------------------------------*/
+struct Particle
+{
+    vec4 _pos;
+    vec4 _vel;
+    vec4 _netForceThisFrame;
+    int _collisionCountThisFrame;
+    float _mass;
+    float _radiusOfInfluence;
+    unsigned int _indexOfNodeThatItIsOccupying;
+    int _isActive;
+};
+
+// TODO: header
+// Contains the Morton Code of a single particle's 3D position and the index of the particle that it originally referred to.  There is one of these for each particle.  
+// Note: I could have put the Morton Code within each particle, but I didn't want to haul sorting information around with each particle, so I made these intermediate structures.
+struct ParticleMortonCode
+{
+    uint _particleIndex;
+    uint _mortonCode;
+};
+
+/*------------------------------------------------------------------------------------------------
+Description:
+    The SSBO that contains all the particles that this simulartion is running.  Rather 
+    self-explanatory.
+    
+    Binding points are relevant only to a particular shader (that is, not to the OpenGL context 
+    as a whole) and are set in the SSBO's ConfigureCompute(...) function.
+Creator: John Cox (9-25-2016)
+------------------------------------------------------------------------------------------------*/
+uniform uint uMaxParticles;
+layout (std430) buffer ParticleBuffer
+{
+    Particle AllParticles[];
+};
+
+/*------------------------------------------------------------------------------------------------
+Description:
+    The particle copy SSBO.  Particles are being sorted in parallel, so swapping 
+    ("A = dest; dest = src; src = dest;") is out.  The particles must be copied as is, their 
+    Morton Codes will be sorted, then the particles will be placed back into the particle buffer in a sorted fashion.
+    
+    Binding points are relevant only to a particular shader (that is, not to the OpenGL context 
+    as a whole) and are set in the SSBO's ConfigureCompute(...) function.
+Creator: John Cox (9-25-2016)
+------------------------------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------------------
+Description:
+    The compute shader's startup function.
+Parameters: None
+Returns:    None
+Creator:    John Cox, 2/2017
+------------------------------------------------------------------------------------------------*/
+void main()
+{
+    uint index = gl_GlobalInvocationID.x;
+
+
+}

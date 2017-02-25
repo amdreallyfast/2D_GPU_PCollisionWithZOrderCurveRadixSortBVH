@@ -7,7 +7,7 @@
 #include <vector>
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Gives members initial values.
     Finds the uniforms for the "populate quad tree" compute shader and gives them initial values.
@@ -23,7 +23,7 @@ Parameters:
     computeShaderKey        Used to look up the shader's uniform and program ID.
 Returns:    None
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeQuadTreePopulate::ComputeQuadTreePopulate(
     unsigned int maxNodes,
     unsigned int maxParticles,
@@ -102,19 +102,19 @@ ComputeQuadTreePopulate::ComputeQuadTreePopulate(
     // no base binding for the atomic counter copy buffer because that is not used in the shader
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Deletes the atomic counter buffer.
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeQuadTreePopulate::~ComputeQuadTreePopulate()
 {
     glDeleteBuffers(1, &_atomicCounterBufferId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Resets the atomic counters and dispatches the shader.
 
@@ -122,7 +122,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ComputeQuadTreePopulate::PopulateTree()
 {
     // reset atomic counters
@@ -158,14 +158,14 @@ void ComputeQuadTreePopulate::PopulateTree()
     //glBindBuffer(GL_COPY_READ_BUFFER, 0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the number of active nodes.  Used during drawing to report the number of 
     nodes in use.
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int ComputeQuadTreePopulate::NumActiveNodes() const
 {
     return _activeNodes;

@@ -2,7 +2,7 @@
 
 #include "ThirdParty/glload/include/glload/gl_4_4.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Calls the base class to give members initial values (zeros).
 
@@ -11,7 +11,7 @@ Parameters:
 faceCollection  Self-explanatory
 Returns:    None
 Creator: John Cox, 1-16-2017
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 QuadTreeNodeSsbo::QuadTreeNodeSsbo(const std::vector<ParticleQuadTreeNode> &nodeCollection) :
     SsboBase()  // generate buffers
 {
@@ -26,19 +26,19 @@ QuadTreeNodeSsbo::QuadTreeNodeSsbo(const std::vector<ParticleQuadTreeNode> &node
 
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Does nothing.  Exists to be declared virtual so that the base class' destructor is called
 upon object death.
 Parameters: None
 Returns:    None
 Creator: John Cox, 1-16-2017
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 QuadTreeNodeSsbo::~QuadTreeNodeSsbo()
 {
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
 Binds the SSBO object (a CPU-side thing) to its corresponding buffer in the shader (GPU).
 
@@ -48,7 +48,7 @@ Parameters:
 computeProgramId    Self-explanatory
 Returns:    None
 Creator: John Cox, 1-16-2017
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void QuadTreeNodeSsbo::ConfigureCompute(unsigned int computeProgramId, const std::string &bufferNameInShader)
 {
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, _bufferId);
@@ -70,7 +70,7 @@ void QuadTreeNodeSsbo::ConfigureCompute(unsigned int computeProgramId, const std
 
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     The SSBO for quad tree nodes does not draw.  The geometry for the tree's nodes will be put 
     into a PolygonSsbo.
@@ -78,7 +78,7 @@ Parameters:
     irrelevant
 Returns:    None
 Creator: John Cox, 1-16-2017
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void QuadTreeNodeSsbo::ConfigureRender(unsigned int, unsigned int)
 {
 }

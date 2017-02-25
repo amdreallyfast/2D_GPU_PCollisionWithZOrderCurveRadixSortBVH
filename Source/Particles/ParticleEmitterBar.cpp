@@ -2,7 +2,7 @@
 
 #include "Include/RandomToast.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Ensures that the object starts object with initialized values.
 Parameters:
@@ -13,7 +13,7 @@ Parameters:
     maxVel      The maximum emission velocity.
 Returns:    None
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ParticleEmitterBar::ParticleEmitterBar(const glm::vec2 &p1, const glm::vec2 &p2, 
     const glm::vec2 &emitDir, float minVel, const float maxVel)
 {
@@ -33,7 +33,7 @@ ParticleEmitterBar::ParticleEmitterBar(const glm::vec2 &p1, const glm::vec2 &p2,
     _transformedEmitDir = _emitDir;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the start vertex of the bar.  Used by the compute updater to tell the 
     compute shader where the bar's starting point is.
@@ -41,65 +41,65 @@ Parameters: None
 Returns:    
     A vec4.
 Creator:    John Cox (9-20-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 glm::vec4 ParticleEmitterBar::GetBarStart() const
 {
     return _transformedStart;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the start vertex of the bar.  Used by the compute updater.
 Parameters: None
 Returns:
     A vec4.
 Creator:    John Cox (9-20-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 glm::vec4 ParticleEmitterBar::GetBarEnd() const
 {
     return _transformedEnd;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the emision direction.  Used by the compute updater.
 Parameters: None
 Returns:
     A vec4.
 Creator:    John Cox (9-20-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 glm::vec4 ParticleEmitterBar::GetEmitDir() const
 {
     return _transformedEmitDir;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the emitter's minimum velocity.  
 Parameters: None
 Returns:
     A float.
 Creator:    John Cox (10-10-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 float ParticleEmitterBar::GetMinVelocity() const
 {
     return _minVel;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the emitter's delta velocity.  
 Parameters: None
 Returns:
     A float.
 Creator:    John Cox (10-10-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 float ParticleEmitterBar::GetDeltaVelocity() const
 {
     return _deltaVelocity;
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Why transform this for every emission of every particle when I can do it once before
     particle updating and be done with it for the rest of the frame?
@@ -108,7 +108,7 @@ Parameters:
 Returns:    None
 Exception:  Safe
 Creator:    John Cox (10-10-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ParticleEmitterBar::SetTransform(const glm::mat4 &emitterTransform)
 {
     _transformedStart = emitterTransform * _start;

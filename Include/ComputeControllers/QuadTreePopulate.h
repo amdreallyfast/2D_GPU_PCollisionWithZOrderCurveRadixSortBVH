@@ -4,7 +4,7 @@
 #include "ThirdParty/glm/vec4.hpp"
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Controls the compute shader that populates the quad tree with particles.  There is one 
     shader dispatched for every particle.
@@ -31,7 +31,7 @@ Description:
     prevent array overruns.  No subdivision, no reallocation, just excess space.
 
 Creator:    John Cox (1-16-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ComputeQuadTreePopulate
 {
 public:

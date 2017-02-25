@@ -4,7 +4,7 @@
 #include "ThirdParty/glload/include/glload/gl_4_4.h"
 #include "ThirdParty/glm/gtc/type_ptr.hpp"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Looks up all uniforms in the "particle update" compute shader.
 
@@ -18,7 +18,7 @@ Parameters:
     computeShaderKey    Used to look up (1) the compute shader ID and (2) uniform locations.
 Returns:    None
 Creator:    John Cox (11-24-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeParticleUpdate::ComputeParticleUpdate(unsigned int numParticles, 
     const glm::vec4 &particleRegionCenter, const float particleRegionRadius, 
     const std::string &computeShaderKey) :
@@ -83,20 +83,20 @@ ComputeParticleUpdate::ComputeParticleUpdate(unsigned int numParticles,
     // completely trash the instruction pipeline.
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Cleans up buffers that were allocated in this object.
 Parameters: None
 Returns:    None
 Creator:    John Cox (10-10-2016)    (created prior to this class in an earlier design)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeParticleUpdate::~ComputeParticleUpdate()
 {
     glDeleteBuffers(1, &_acParticleCounterBufferId);
     glDeleteBuffers(1, &_acParticleCounterCopyBufferId);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Resets the atomic counter and dispatches the shader.
     
@@ -106,7 +106,7 @@ Parameters:
 Returns:    None
 Creator:    John Cox (10-10-2016)
             (created in an earlier class, but later split into a dedicated class)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ComputeParticleUpdate::Update(const float deltaTimeSec) 
 {
     // spread out the particles between lots of work items, but keep it 1-dimensional for easy 
@@ -145,14 +145,14 @@ void ComputeParticleUpdate::Update(const float deltaTimeSec)
     glBindBuffer(GL_COPY_READ_BUFFER, 0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     A simple getter for the number of particles that were active on the last Update(...) call.
     Useful for performance comparison with CPU version.
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-7-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 unsigned int ComputeParticleUpdate::NumActiveParticles() const
 {
     return _activeParticleCount;

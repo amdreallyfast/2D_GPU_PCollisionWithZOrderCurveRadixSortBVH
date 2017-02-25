@@ -1,6 +1,6 @@
 #include "Include/Particles/ParticleQuadTree.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Sets up the initial tree subdivision with _NUM_ROWS_IN_TREE_INITIAL by 
     _NUM_COLUMNS_IN_TREE_INITIAL nodes.  Boundaries are determined by the particle region center 
@@ -12,7 +12,7 @@ Parameters:
 Returns:    None
 Exception:  Safe
 Creator:    John Cox (12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ParticleQuadTree::ParticleQuadTree(const glm::vec4 &particleRegionCenter, float particleRegionRadius)
 {
     // allocate space for the nodes

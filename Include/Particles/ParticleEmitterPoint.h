@@ -5,12 +5,12 @@
 #include "Include/MinMaxVelocity.h"
 #include "ThirdParty/glm/vec2.hpp"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     This particle emitter will reset particles to a position at a single point and will set their
     velocity to a random vector anywhere within 360 degrees.
 Creator:    John Cox (7-2-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 class ParticleEmitterPoint : public IParticleEmitter
 {
 public:

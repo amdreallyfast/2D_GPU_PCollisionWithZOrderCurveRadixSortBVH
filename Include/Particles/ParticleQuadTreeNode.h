@@ -2,12 +2,12 @@
 
 #include <memory>
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Contains all info necessary for a single node of the quad tree.  It is a dumb container 
     meant for use only by ParticleQuadTree.
 Creator:    John Cox (12-17-2016)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 struct ParticleQuadTreeNode
 {
     ParticleQuadTreeNode() :

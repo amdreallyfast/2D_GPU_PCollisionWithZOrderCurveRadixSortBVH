@@ -3,7 +3,7 @@
 #include <string>
 #include <stdio.h>
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Rather than calling glGetError(...) every time I make an OpenGL call, I register this
     function as the debug callback.  If an error or any OpenGL message in general pops up, this
@@ -14,7 +14,7 @@ Parameters:
     function is responsible for calling this one as it sees fit.
 Returns:    None
 Creator:    John Cox (2014)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void APIENTRY DebugFunc(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length,
     const GLchar* message, const GLvoid* userParam)
 {

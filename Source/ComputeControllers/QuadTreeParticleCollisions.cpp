@@ -4,7 +4,7 @@
 #include "Shaders/ShaderStorage.h"
 
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Gives members initial values.
     Finds the uniforms for the "particle collisions" compute shader and gives them initial values.
@@ -13,7 +13,7 @@ Parameters:
     computeShaderKey        Used to look up the shader's uniform and program ID.
 Returns:    None
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 ComputeParticleQuadTreeCollisions::ComputeParticleQuadTreeCollisions(unsigned int maxParticles, const std::string computeShaderKey) :
     _computeProgramId(0),
     _totalParticles(0),
@@ -39,7 +39,7 @@ ComputeParticleQuadTreeCollisions::ComputeParticleQuadTreeCollisions(unsigned in
     glUseProgram(0);
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Dispatches the shader.  
 
@@ -47,7 +47,7 @@ Description:
 Parameters: None
 Returns:    None
 Creator:    John Cox (1-21-2017)
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void ComputeParticleQuadTreeCollisions::Update(float deltaTimeSec)
 {
     // calculate the number of work groups and start the magic

@@ -2,7 +2,7 @@
 
 #include "ThirdParty/glload/include/glload/gl_4_4.h"
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Calls the base class to give members initial values (zeros).
 
@@ -11,7 +11,7 @@ Parameters:
     faceCollection  Self-explanatory
 Returns:    None
 Creator: John Cox, 9-8-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 PolygonSsbo::PolygonSsbo(const std::vector<PolygonFace> &faceCollection) :
     SsboBase()  // generate buffers
 {
@@ -27,19 +27,19 @@ PolygonSsbo::PolygonSsbo(const std::vector<PolygonFace> &faceCollection) :
 
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Does nothing.  Exists to be declared virtual so that the base class' destructor is called 
     upon object death.
 Parameters: None
 Returns:    None
 Creator: John Cox, 9-8-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 PolygonSsbo::~PolygonSsbo()
 {
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Binds the SSBO object (a CPU-side thing) to its corresponding buffer in the shader (GPU).
 
@@ -49,7 +49,7 @@ Parameters:
     computeProgramId    Self-explanatory
 Returns:    None
 Creator: John Cox, 11-24-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void PolygonSsbo::ConfigureCompute(unsigned int computeProgramId, const std::string &bufferNameInShader)
 {
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, _bufferId);
@@ -72,7 +72,7 @@ void PolygonSsbo::ConfigureCompute(unsigned int computeProgramId, const std::str
 
 }
 
-/*-----------------------------------------------------------------------------------------------
+/*------------------------------------------------------------------------------------------------
 Description:
     Sets up the vertex attribute pointers for this SSBO's VAO.
 Parameters: 
@@ -80,7 +80,7 @@ Parameters:
     drawStyle           Expected to be GL_LINES (2D program) or GL_TRIANGLES (3D program).
 Returns:    None
 Creator: John Cox, 11-24-2016
------------------------------------------------------------------------------------------------*/
+------------------------------------------------------------------------------------------------*/
 void PolygonSsbo::ConfigureRender(unsigned int renderProgramId, unsigned int drawStyle)
 {
     _drawStyle = drawStyle;

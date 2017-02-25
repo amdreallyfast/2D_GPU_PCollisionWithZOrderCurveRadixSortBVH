@@ -177,42 +177,47 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shaders\geometry.frag">
+    <None Include="Shaders\FreeType.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\geometry.vert">
+    <None Include="Shaders\FreeType.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\particleRender.frag">
+    <None Include="Shaders\Geometry.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\particleRender.vert">
+    <None Include="Shaders\Geometry.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\particleReset.comp">
+    <None Include="Shaders\ParticleRender.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\particleUpdate.comp">
+    <None Include="Shaders\ParticleRender.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\quadTreeGenerateGeometry.comp">
+    <None Include="Shaders\ParticleReset.comp">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\quadTreeParticleCollisions.comp">
+    <None Include="Shaders\ParticleSort.comp">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\quadTreePopulate.comp">
+    <None Include="Shaders\ParticleSortPrep.comp">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\quadTreeReset.comp">
+    <None Include="Shaders\ParticleUpdate.comp">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\freeType.frag">
+    <None Include="Shaders\QuadTreeGenerateGeometry.comp">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\freeType.vert">
+    <None Include="Shaders\QuadTreeParticleCollisions.comp">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\mortonCodeSort.comp" />
+    <None Include="Shaders\QuadTreePopulate.comp">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\QuadTreeReset.comp">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
