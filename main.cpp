@@ -6,8 +6,8 @@
 // Build note: Also need to link opengl32.lib (unknown directory, but VS seems to know where it 
 // is, so don't put in an "Additional Library Directories" entry for it).
 // Build note: Also need to link glload/lib/glloadD.lib.
-#include "glload/include/glload/gl_4_4.h"
-#include "glload/include/glload/gl_load.hpp"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_load.hpp"
 
 // Build note: Must be included after OpenGL code (in this case, glload).
 // Build note: Also need to link freeglut/lib/freeglutD.lib.  However, the linker will try to 
@@ -19,19 +19,19 @@
 #define FREEGLUT_STATIC
 #define _LIB
 #define FREEGLUT_LIB_PRAGMAS 0
-#include "freeglut/include/GL/freeglut.h"
+#include "ThirdParty/freeglut/include/GL/freeglut.h"
 
 // this linking approach is very useful for portable, crude, barebones demo code, but it is 
 // better to link through the project building properties
-#pragma comment(lib, "glload/lib/glloadD.lib")
+#pragma comment(lib, "ThirdParty/glload/lib/glloadD.lib")
 #pragma comment(lib, "opengl32.lib")            // needed for glload::LoadFunctions()
-#pragma comment(lib, "freeglut/lib/freeglutD.lib")
+#pragma comment(lib, "ThirdParty/freeglut/lib/freeglutD.lib")
 #ifdef WIN32
 #pragma comment(lib, "winmm.lib")               // Windows-specific; freeglut needs it
 #endif
 
 // apparently the FreeType lib also needs a companion file, "freetype261d.pdb"
-#pragma comment (lib, "freetype-2.6.1/objs/vc2010/Win32/freetype261d.lib")
+#pragma comment (lib, "ThirdParty/freetype-2.6.1/objs/vc2010/Win32/freetype261d.lib")
 
 // for printf(...)
 #include <stdio.h>
@@ -41,17 +41,17 @@
 #include "Shaders/ShaderStorage.h"
 
 // for particles, where they live, and how to update them
-#include "glm/vec2.hpp"
-#include "ParticleQuadTree.h"
-#include "ParticleSsbo.h"
-#include "PolygonSsbo.h"
-#include "QuadTreeNodeSsbo.h"
-#include "ComputeControllers/ParticleReset.h"
-#include "ComputeControllers/ParticleUpdate.h"
-#include "ComputeControllers/QuadTreeReset.h"
-#include "ComputeControllers/QuadTreeGenerateGeometry.h"
-#include "ComputeControllers/QuadTreePopulate.h"
-#include "ComputeControllers/QuadTreeParticleCollisions.h"
+#include "ThirdParty/glm/vec2.hpp"
+#include "Include/Particles/ParticleQuadTree.h"
+#include "Include/SSBOs/ParticleSsbo.h"
+#include "Include/SSBOs/PolygonSsbo.h"
+#include "Include/SSBOs/QuadTreeNodeSsbo.h"
+#include "Include/ComputeControllers/ParticleReset.h"
+#include "Include/ComputeControllers/ParticleUpdate.h"
+#include "Include/ComputeControllers/QuadTreeReset.h"
+#include "Include/ComputeControllers/QuadTreeGenerateGeometry.h"
+#include "Include/ComputeControllers/QuadTreePopulate.h"
+#include "Include/ComputeControllers/QuadTreeParticleCollisions.h"
 
 // for moving the shapes around in window space
 #include "glm/gtc/matrix_transform.hpp"
