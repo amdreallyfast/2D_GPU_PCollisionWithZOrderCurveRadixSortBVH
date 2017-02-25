@@ -1,7 +1,7 @@
 #include "ShaderStorage.h"
 
 // for GL typedefs
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
 // for making program from shader collection
 #include <string>

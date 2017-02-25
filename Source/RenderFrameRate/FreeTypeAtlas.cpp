@@ -1,9 +1,9 @@
-#include "FreeTypeAtlas.h"
+#include "Include/RenderFrameRate/FreeTypeAtlas.h"
 
 // the OpenGL version include also includes all previous versions
 // Build note: Do NOT mistakenly include _int_gl_4_4.h.  That one doesn't define OpenGL stuff 
 // first.
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
 // needed to get the width and height of the rendering window for calculations of screen 
 // coordinate/pixel count fractions
@@ -18,7 +18,7 @@
 #define FREEGLUT_STATIC
 #define _LIB
 #define FREEGLUT_LIB_PRAGMAS 0
-#include "freeglut/include/GL/freeglut.h"
+#include "ThirdParty/freeglut/include/GL/freeglut.h"
 
 #include <algorithm>    // for std::max
 #include <vector>       // for memory safe allocation of coordinate info for each glyph

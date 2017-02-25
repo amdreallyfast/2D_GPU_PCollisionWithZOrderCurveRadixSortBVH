@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SsboBase.h"
-#include "PolygonFace.h"
+#include "Include/SSBOs/SsboBase.h"
+#include "Include/PolygonFace.h"
 #include <vector>
 
 /*-----------------------------------------------------------------------------------------------

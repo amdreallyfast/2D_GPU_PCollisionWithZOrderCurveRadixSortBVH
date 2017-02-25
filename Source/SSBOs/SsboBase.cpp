@@ -1,15 +1,21 @@
-#include "SsboBase.h"
+#include "Include/SSBOs/SsboBase.h"
 
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
-// TODO: header
+/*-----------------------------------------------------------------------------------------------
+Description:
+    This was created for convenience as I've been making more and more SSBOs.
+Parameters: None
+Returns:    
+    See descriptions.
+Creator: John Cox, 1/2017
+-----------------------------------------------------------------------------------------------*/
 static unsigned int GetNewStorageBlockBindingPointIndex()
 {
     static GLuint ssboBindingPointIndex = 0;
 
     return ssboBindingPointIndex++;
 }
-
 
 /*-----------------------------------------------------------------------------------------------
 Description:

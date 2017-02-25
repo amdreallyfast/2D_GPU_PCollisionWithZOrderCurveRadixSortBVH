@@ -89,7 +89,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);C:\Users\amdre\OneDrive\Documents\GitHub\2D_GPU_PCollisionWithZOrderCurveRadixSortBVH\ThirdParty\freetype-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,54 +146,54 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ComputeControllers\ParticleReset.cpp" />
-    <ClCompile Include="ComputeControllers\ParticleUpdate.cpp" />
-    <ClCompile Include="ComputeControllers\QuadTreeGenerateGeometry.cpp" />
-    <ClCompile Include="ComputeControllers\QuadTreeParticleCollisions.cpp" />
-    <ClCompile Include="ComputeControllers\QuadTreePopulate.cpp" />
-    <ClCompile Include="ComputeControllers\QuadTreeReset.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MinMaxVelocity.cpp" />
-    <ClCompile Include="OpenGlErrorHandling.cpp" />
-    <ClCompile Include="ParticleEmitterBar.cpp" />
-    <ClCompile Include="ParticleEmitterPoint.cpp" />
-    <ClCompile Include="ParticleQuadTree.cpp" />
-    <ClCompile Include="ParticleSsbo.cpp" />
-    <ClCompile Include="PolygonSsbo.cpp" />
-    <ClCompile Include="QuadTreeNodeSsbo.cpp" />
-    <ClCompile Include="RandomToast.cpp" />
-    <ClCompile Include="RenderFrameRate\FreeTypeAtlas.cpp" />
-    <ClCompile Include="RenderFrameRate\FreeTypeEncapsulated.cpp" />
-    <ClCompile Include="RenderFrameRate\Stopwatch.cpp" />
     <ClCompile Include="Shaders\ShaderStorage.cpp" />
-    <ClCompile Include="SsboBase.cpp" />
+    <ClCompile Include="Source\ComputeControllers\ParticleReset.cpp" />
+    <ClCompile Include="Source\ComputeControllers\ParticleUpdate.cpp" />
+    <ClCompile Include="Source\ComputeControllers\QuadTreeGenerateGeometry.cpp" />
+    <ClCompile Include="Source\ComputeControllers\QuadTreeParticleCollisions.cpp" />
+    <ClCompile Include="Source\ComputeControllers\QuadTreePopulate.cpp" />
+    <ClCompile Include="Source\ComputeControllers\QuadTreeReset.cpp" />
+    <ClCompile Include="Source\MinMaxVelocity.cpp" />
+    <ClCompile Include="Source\OpenGlErrorHandling.cpp" />
+    <ClCompile Include="Source\Particles\ParticleEmitterBar.cpp" />
+    <ClCompile Include="Source\Particles\ParticleEmitterPoint.cpp" />
+    <ClCompile Include="Source\Particles\ParticleQuadTree.cpp" />
+    <ClCompile Include="Source\RandomToast.cpp" />
+    <ClCompile Include="Source\RenderFrameRate\FreeTypeAtlas.cpp" />
+    <ClCompile Include="Source\RenderFrameRate\FreeTypeEncapsulated.cpp" />
+    <ClCompile Include="Source\RenderFrameRate\Stopwatch.cpp" />
+    <ClCompile Include="Source\SSBOs\ParticleSsbo.cpp" />
+    <ClCompile Include="Source\SSBOs\PolygonSsbo.cpp" />
+    <ClCompile Include="Source\SSBOs\QuadTreeNodeSsbo.cpp" />
+    <ClCompile Include="Source\SSBOs\SsboBase.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ComputeControllers\ParticleReset.h" />
-    <ClInclude Include="ComputeControllers\ParticleUpdate.h" />
-    <ClInclude Include="ComputeControllers\QuadTreeGenerateGeometry.h" />
-    <ClInclude Include="ComputeControllers\QuadTreeParticleCollisions.h" />
-    <ClInclude Include="ComputeControllers\QuadTreePopulate.h" />
-    <ClInclude Include="ComputeControllers\QuadTreeReset.h" />
-    <ClInclude Include="MyVertex.h" />
-    <ClInclude Include="ParticleQuadTree.h" />
-    <ClInclude Include="ParticleQuadTreeNode.h" />
-    <ClInclude Include="PolygonSsbo.h" />
-    <ClInclude Include="QuadTreeNodeSsbo.h" />
-    <ClInclude Include="RenderFrameRate\FreeTypeAtlas.h" />
-    <ClInclude Include="RenderFrameRate\FreeTypeEncapsulated.h" />
-    <ClInclude Include="RenderFrameRate\Stopwatch.h" />
+    <ClInclude Include="Include\ComputeControllers\ParticleReset.h" />
+    <ClInclude Include="Include\ComputeControllers\ParticleUpdate.h" />
+    <ClInclude Include="Include\ComputeControllers\QuadTreeGenerateGeometry.h" />
+    <ClInclude Include="Include\ComputeControllers\QuadTreeParticleCollisions.h" />
+    <ClInclude Include="Include\ComputeControllers\QuadTreePopulate.h" />
+    <ClInclude Include="Include\ComputeControllers\QuadTreeReset.h" />
+    <ClInclude Include="Include\MinMaxVelocity.h" />
+    <ClInclude Include="Include\MyVertex.h" />
+    <ClInclude Include="Include\OpenGlErrorHandling.h" />
+    <ClInclude Include="Include\Particles\IParticleEmitter.h" />
+    <ClInclude Include="Include\Particles\Particle.h" />
+    <ClInclude Include="Include\Particles\ParticleEmitterBar.h" />
+    <ClInclude Include="Include\Particles\ParticleEmitterPoint.h" />
+    <ClInclude Include="Include\Particles\ParticleQuadTree.h" />
+    <ClInclude Include="Include\Particles\ParticleQuadTreeNode.h" />
+    <ClInclude Include="Include\PolygonFace.h" />
+    <ClInclude Include="Include\RandomToast.h" />
+    <ClInclude Include="Include\RenderFrameRate\FreeTypeAtlas.h" />
+    <ClInclude Include="Include\RenderFrameRate\FreeTypeEncapsulated.h" />
+    <ClInclude Include="Include\RenderFrameRate\Stopwatch.h" />
+    <ClInclude Include="Include\SSBOs\ParticleSsbo.h" />
+    <ClInclude Include="Include\SSBOs\PolygonSsbo.h" />
+    <ClInclude Include="Include\SSBOs\QuadTreeNodeSsbo.h" />
+    <ClInclude Include="Include\SSBOs\SsboBase.h" />
     <ClInclude Include="Shaders\ShaderStorage.h" />
-    <ClInclude Include="SsboBase.h" />
-    <ClInclude Include="IParticleEmitter.h" />
-    <ClInclude Include="MinMaxVelocity.h" />
-    <ClInclude Include="OpenGlErrorHandling.h" />
-    <ClInclude Include="Particle.h" />
-    <ClInclude Include="ParticleEmitterBar.h" />
-    <ClInclude Include="ParticleEmitterPoint.h" />
-    <ClInclude Include="ParticleSsbo.h" />
-    <ClInclude Include="PolygonFace.h" />
-    <ClInclude Include="RandomToast.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\freeType.frag" />

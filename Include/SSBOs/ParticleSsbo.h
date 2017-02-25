@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SsboBase.h"
-#include "Particle.h"
+#include "Include/SSBOs/SsboBase.h"
+#include "Include/Particles/Particle.h"
 #include <vector>
 
 /*-----------------------------------------------------------------------------------------------

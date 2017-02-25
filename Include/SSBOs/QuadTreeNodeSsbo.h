@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SsboBase.h"
-#include "ParticleQuadTreeNode.h"
+#include "Include/SSBOs/SsboBase.h"
+#include "Include/Particles/ParticleQuadTreeNode.h"
 #include <vector>
 
 /*-----------------------------------------------------------------------------------------------

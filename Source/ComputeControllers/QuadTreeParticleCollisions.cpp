@@ -1,7 +1,7 @@
-#include "ComputeQuadTreeParticleCollisions.h"
+#include "Include/ComputeControllers/QuadTreeParticleCollisions.h"
 
-#include "glload/include/glload/gl_4_4.h"
-#include "ShaderStorage.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
+#include "Shaders/ShaderStorage.h"
 
 
 /*-----------------------------------------------------------------------------------------------

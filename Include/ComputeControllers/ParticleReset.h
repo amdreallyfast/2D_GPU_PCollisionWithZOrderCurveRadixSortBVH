@@ -1,8 +1,8 @@
 #pragma once
 
-#include "IParticleEmitter.h"
-#include "ParticleEmitterPoint.h"
-#include "ParticleEmitterBar.h"
+#include "Include/Particles/IParticleEmitter.h"
+#include "Include/Particles/ParticleEmitterPoint.h"
+#include "Include/Particles/ParticleEmitterBar.h"
 #include <string>
 #include <vector>
 

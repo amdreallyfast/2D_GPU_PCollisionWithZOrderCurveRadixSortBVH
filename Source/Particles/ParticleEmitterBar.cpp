@@ -1,6 +1,6 @@
-#include "ParticleEmitterBar.h"
+#include "Include/Particles/ParticleEmitterBar.h"
 
-#include "RandomToast.h"
+#include "Include/RandomToast.h"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

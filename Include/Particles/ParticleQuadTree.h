@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "ParticleQuadTreeNode.h"
-#include "glm/vec4.hpp"
+#include "Include/Particles/ParticleQuadTreeNode.h"
+#include "ThirdParty/glm/vec4.hpp"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

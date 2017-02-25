@@ -1,7 +1,7 @@
 #pragma once
 
-#include "glm/vec2.hpp"
-#include "glm/vec4.hpp"
+#include "ThirdParty/glm/vec2.hpp"
+#include "ThirdParty/glm/vec4.hpp"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

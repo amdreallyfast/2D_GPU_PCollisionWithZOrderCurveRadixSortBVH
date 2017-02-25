@@ -1,7 +1,7 @@
-#include "ParticleEmitterPoint.h"
+#include "Include/Particles/ParticleEmitterPoint.h"
 
-#include "RandomToast.h"
-#include "glm/detail/func_geometric.hpp" // for normalizing glm vectors
+#include "Include/RandomToast.h"
+#include "ThirdParty/glm/detail/func_geometric.hpp" // for normalizing glm vectors
 
 /*-----------------------------------------------------------------------------------------------
 Description:

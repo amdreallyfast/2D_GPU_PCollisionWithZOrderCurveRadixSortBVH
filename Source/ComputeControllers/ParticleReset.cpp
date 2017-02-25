@@ -1,9 +1,9 @@
-#include "ComputeParticleReset.h"
+#include "Include/ComputeControllers/ParticleReset.h"
 
-#include "ShaderStorage.h"
+#include "Shaders/ShaderStorage.h"
 
-#include "glload/include/glload/gl_4_4.h"
-#include "glm/gtc/type_ptr.hpp"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glm/gtc/type_ptr.hpp"
 
 // for starting up the atomic counter for the compute shader's rand hash
 #include <random>

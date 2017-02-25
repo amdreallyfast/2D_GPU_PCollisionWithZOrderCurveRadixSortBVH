@@ -1,6 +1,6 @@
-#include "QuadTreeNodeSsbo.h"
+#include "Include/SSBOs/QuadTreeNodeSsbo.h"
 
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

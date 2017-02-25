@@ -1,6 +1,6 @@
 #pragma once
 
-#include "glm/vec4.hpp"
+#include "ThirdParty/glm/vec4.hpp"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

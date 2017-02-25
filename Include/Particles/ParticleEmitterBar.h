@@ -1,9 +1,9 @@
 #pragma once
 
-#include "IParticleEmitter.h"
-#include "Particle.h"
-#include "MinMaxVelocity.h"
-#include "glm/vec2.hpp"
+#include "Include/Particles/IParticleEmitter.h"
+#include "Include/Particles/Particle.h"
+#include "Include/MinMaxVelocity.h"
+#include "ThirdParty/glm/vec2.hpp"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

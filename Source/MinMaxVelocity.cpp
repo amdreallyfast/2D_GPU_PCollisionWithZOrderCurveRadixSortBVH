@@ -1,7 +1,7 @@
-#include "MinMaxVelocity.h"
+#include "Include/MinMaxVelocity.h"
 
-#include "glm/detail/func_geometric.hpp" // for normalizing glm vectors
-#include "RandomToast.h"
+#include "ThirdParty/glm/detail/func_geometric.hpp" // for normalizing glm vectors
+#include "Include/RandomToast.h"
 
 
 /*-----------------------------------------------------------------------------------------------

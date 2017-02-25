@@ -1,8 +1,8 @@
-#include "ComputeQuadTreePopulate.h"
+#include "Include/ComputeControllers/QuadTreePopulate.h"
 
-#include "glload/include/glload/gl_4_4.h"
-#include "glm/gtc/type_ptr.hpp"
-#include "ShaderStorage.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glm/gtc/type_ptr.hpp"
+#include "Shaders/ShaderStorage.h"
 
 #include <vector>
 

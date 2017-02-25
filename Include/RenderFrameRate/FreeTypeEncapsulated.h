@@ -6,7 +6,7 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H  // also defined relative to "freetype-2.6.1/include/"
 
-#include "FreeTypeAtlas.h"
+#include "Include/RenderFrameRate/FreeTypeAtlas.h"
 
 #include <string>
 #include <memory>   // for the shared pointer

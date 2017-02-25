@@ -1,6 +1,6 @@
-#include "QuadTreeReset.h"
+#include "Include/ComputeControllers/QuadTreeReset.h"
 
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 #include "Shaders/ShaderStorage.h"
 
 

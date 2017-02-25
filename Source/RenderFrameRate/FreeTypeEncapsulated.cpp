@@ -1,12 +1,12 @@
-#include "FreeTypeEncapsulated.h"
+#include "Include/RenderFrameRate/FreeTypeEncapsulated.h"
 
 // the OpenGL version include also includes all previous versions
 // Build note: Do NOT mistakenly include _int_gl_4_4.h.  That one doesn't define OpenGL stuff 
 // first.
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
 // for make the shaders
-#include "ShaderStorage.h"
+#include "Shaders/ShaderStorage.h"
 
 
 /*-----------------------------------------------------------------------------------------------

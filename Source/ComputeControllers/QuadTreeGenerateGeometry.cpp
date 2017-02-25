@@ -1,7 +1,7 @@
-#include "ComputeQuadTreeGenerateGeometry.h"
+#include "Include/ComputeControllers/QuadTreeGenerateGeometry.h"
 
-#include "glload/include/glload/gl_4_4.h"
-#include "ShaderStorage.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
+#include "Shaders/ShaderStorage.h"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

@@ -6,7 +6,7 @@
 
 // usually I avoid including this because it is so large, but the interested party must have 
 // access to GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, etc.
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

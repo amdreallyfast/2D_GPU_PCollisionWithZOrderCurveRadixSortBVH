@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Particle.h"
-#include "glm/mat4x4.hpp"
+#include "Include/Particles/Particle.h"
+#include "ThirdParty/glm/mat4x4.hpp"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

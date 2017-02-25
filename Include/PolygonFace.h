@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MyVertex.h"
+#include "Include/MyVertex.h"
 
 /*-----------------------------------------------------------------------------------------------
 Description:

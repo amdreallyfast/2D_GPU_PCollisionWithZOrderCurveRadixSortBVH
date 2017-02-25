@@ -1,6 +1,6 @@
-#include "PolygonSsbo.h"
+#include "Include/SSBOs/PolygonSsbo.h"
 
-#include "glload/include/glload/gl_4_4.h"
+#include "ThirdParty/glload/include/glload/gl_4_4.h"
 
 /*-----------------------------------------------------------------------------------------------
 Description:
