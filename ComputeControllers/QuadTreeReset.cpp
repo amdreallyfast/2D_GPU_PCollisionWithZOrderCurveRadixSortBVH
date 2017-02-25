@@ -1,7 +1,7 @@
-#include "ComputeQuadTreeReset.h"
+#include "QuadTreeReset.h"
 
 #include "glload/include/glload/gl_4_4.h"
-#include "ShaderStorage.h"
+#include "Shaders/ShaderStorage.h"
 
 
 /*-----------------------------------------------------------------------------------------------
